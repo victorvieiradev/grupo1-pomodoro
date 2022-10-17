@@ -3,7 +3,7 @@ package com.grupo1.mytasks.Service;
 import com.grupo1.mytasks.Model.UsuarioModel;
 import com.grupo1.mytasks.Repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -12,15 +12,15 @@ import java.util.List;
 @Service
 public class UsuarioService {
 
-    private BCryptPasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
-    }
+//    private BCryptPasswordEncoder passwordEncoder(){
+//        return new BCryptPasswordEncoder();
+//    }
 
     @Autowired
     private UsuarioRepository usuarioRepository;
 
     public UsuarioModel cadastrarUsuario(UsuarioModel usuarioModel){
-        usuarioModel.setSenha(passwordEncoder().encode(usuarioModel.getSenha()));
+      //  usuarioModel.setSenha(passwordEncoder().encode(usuarioModel.getSenha()));
         return  usuarioRepository.save(usuarioModel);
     }
 
