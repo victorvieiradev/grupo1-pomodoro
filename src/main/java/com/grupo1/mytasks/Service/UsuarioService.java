@@ -1,5 +1,6 @@
 package com.grupo1.mytasks.Service;
 
+import com.grupo1.mytasks.ExceptionHandler.ExceptionHandlerUsuario;
 import com.grupo1.mytasks.Model.UsuarioModel;
 import com.grupo1.mytasks.Repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class UsuarioService {
+public class UsuarioService extends ExceptionHandlerUsuario {
 
 //    private BCryptPasswordEncoder passwordEncoder(){
 //        return new BCryptPasswordEncoder();

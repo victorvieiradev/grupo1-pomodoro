@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class UsuarioModel implements Serializable {
 
     @Id
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String cpf;
 
     @Column
