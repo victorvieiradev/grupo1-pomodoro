@@ -53,6 +53,7 @@ public class TarefaController {
         tarefa.setId(tarefaModelOptional.get().getId());
         return ResponseEntity.status(HttpStatus.OK).body(tarefaService.salvarTarefa(tarefa));
     }
+    @PutMapping(path = "/concluir/{id}")
     public ResponseEntity<Object> concluirTarefa(@PathVariable Long id ){
         Optional<TarefaModel> tarefaModelOptional = tarefaService.exibirTarefaPorId(id);
         if (tarefaModelOptional.isEmpty()){
