@@ -2,6 +2,7 @@ package com.grupo1.mytasks.Controller;
 
 import com.grupo1.mytasks.Model.TarefaModel;
 import com.grupo1.mytasks.Service.TarefaService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -42,15 +43,26 @@ public class TarefaController {
         tarefaService.excluirTarefa(tarefaModel.get());
         return ResponseEntity.status(HttpStatus.OK).body("Excluída com sucesso.");
     }
-@PutMapping(path = "/{id}")
-    public ResponseEntity<?> atualizarTarefa(@PathVariable @RequestBody Long id, TarefaModel tarefa){
-    Optional<TarefaModel> tarefaModelOptional = tarefaService.exibirTarefaPorId(id);
-    if (tarefaModelOptional.isEmpty()){
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Não existe tarefa para ser atualizada.");
+
+    @PutMapping(path = "/{id}")
+    public ResponseEntity<?> atualizarTarefa(@PathVariable @RequestBody Long id, TarefaModel tarefa) {
+        Optional<TarefaModel> tarefaModelOptional = tarefaService.exibirTarefaPorId(id);
+        if (tarefaModelOptional.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Não existe tarefa para ser atualizada.");
+        }
+        tarefa.setId(tarefaModelOptional.get().getId());
+        return ResponseEntity.status(HttpStatus.OK).body(tarefaService.salvarTarefa(tarefa));
     }
-    tarefa.setId(tarefaModelOptional.get().getId());
-    return ResponseEntity.status(HttpStatus.OK).body(tarefaService.salvarTarefa(tarefa));
-}
+    public ResponseEntity<Object> concluirTarefa(@PathVariable Long id ){
+        Optional<TarefaModel> tarefaModelOptional = tarefaService.exibirTarefaPorId(id);
+        if (tarefaModelOptional.isEmpty()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Não foi encontrado tarefa para ser marcada como concluída.");
+        }
+        var tarefa = new TarefaModel();
+        BeanUtils.copyProperties(tarefaModelOptional.get(), tarefa);
+        tarefa.setConcluido(true);
+        return ResponseEntity.status(HttpStatus.OK).body(tarefaService.salvarTarefa(tarefa));
+    }
 
 
 }
