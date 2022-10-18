@@ -19,6 +19,40 @@ body {
   background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
 }
 
+nav#menu {
+  display: block;
+  
+
+}
+
+nav#menu ul{
+  list-style: none;
+  position: relative;
+  width: auto;
+  text-align: center;
+  text-decoration: none;
+  
+}
+
+nav#menu li{
+display: inline-block;
+color: #000;
+background-color: rgb(231, 208, 162);
+padding: 10px;
+margin: 4px;
+border-radius: 500px;
+
+}
+
+nav#menu li:hover {
+  background-color:rgb(223, 151, 8);
+}
+
+nav#menu li a {
+  text-decoration: none;
+}
+
+
 /* button {
   cursor: pointer;
 } */
