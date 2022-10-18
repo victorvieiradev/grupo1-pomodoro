@@ -1,0 +1,17 @@
+@media (max-width: 575.98px) {
+    #box-cronometro{
+        width: 300px;
+        height: 300px;
+        font-size: 4em;
+    }
+
+    #box-modal{
+        width: 350px;
+        height: 450;
+    }
+
+    #modal-title{
+        font-size:1.2em;
+    }
+
+}
