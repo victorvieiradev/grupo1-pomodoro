@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.rmi.NoSuchObjectException;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 public class UsuarioService extends ExceptionHandlerUsuario {
@@ -36,6 +36,14 @@ public class UsuarioService extends ExceptionHandlerUsuario {
 
     }
 
+    public Optional<UsuarioModel> buscarUsuarioPorId(String cpf){
+        if (usuarioRepository.findAll().isEmpty()) {
+            throw new NullPointerException();
+        } else if (usuarioRepository.findById(cpf).isPresent()){
+            return usuarioRepository.findById(cpf);
+        }else
+            throw new NoSuchElementException();
+    }
     public UsuarioModel alterarUsuario(UsuarioModel usuarioModel) {
 
         if (usuarioRepository.findAll().isEmpty()) {
@@ -43,15 +51,17 @@ public class UsuarioService extends ExceptionHandlerUsuario {
         } else if (usuarioRepository.findById(usuarioModel.getCpf()).isPresent()) {
             return usuarioRepository.save(usuarioModel);
         }else
-            throw new NullPointerException();
+            throw new NoSuchElementException();
     }
 
     public void apagarUsuario(String cpf) {
 
         if (usuarioRepository.findAll().isEmpty()) {
             throw new NullPointerException();
-        } else
+        } else if(usuarioRepository.findById(cpf).isPresent()){;
             usuarioRepository.deleteById(cpf);
+        }else
+            throw new NoSuchElementException();
     }
 }
 

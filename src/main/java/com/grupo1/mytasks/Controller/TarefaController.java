@@ -1,5 +1,6 @@
 package com.grupo1.mytasks.Controller;
 
+import com.grupo1.mytasks.ExceptionHandler.ExceptionHandlerTarefas;
 import com.grupo1.mytasks.Model.TarefaModel;
 import com.grupo1.mytasks.Service.TarefaService;
 import org.springframework.beans.BeanUtils;
@@ -12,7 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/tarefas")
-public class TarefaController {
+public class TarefaController extends ExceptionHandlerTarefas {
     private final TarefaService tarefaService;
 
     public TarefaController(TarefaService tarefaService) {
@@ -32,8 +33,9 @@ public class TarefaController {
         if (tarefaModelOptional.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Tarefa não encontrada");
         }
-        return ResponseEntity.status(HttpStatus.OK).body(tarefaModelOptional.get());
+        return ResponseEntity.ok(tarefaModelOptional.get());
     }
+
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<?> excluirTarefa(@PathVariable Long id){
         Optional<TarefaModel> tarefaModel = tarefaService.exibirTarefaPorId(id);

@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class UsuarioController {
@@ -26,6 +27,11 @@ public class UsuarioController {
         return ResponseEntity.ok(usuarioService.buscarUsuarios());
     }
 
+    @GetMapping(path = "/usuario/{cpf}")
+    public ResponseEntity<Optional<UsuarioModel>> buscarUsuarioPorId(@PathVariable String cpf){
+        return ResponseEntity.ok(usuarioService.buscarUsuarioPorId(cpf));
+    }
+
     @PutMapping(path = "/usuario/{cpf}")
     public ResponseEntity<UsuarioModel> alterarUsuario(@RequestBody UsuarioModel usuarioModel, @PathVariable String cpf){
         return ResponseEntity.ok(usuarioService.alterarUsuario(usuarioModel));
@@ -36,4 +42,6 @@ public class UsuarioController {
         usuarioService.apagarUsuario(cpf);
         return null;
     }
+
+
 }

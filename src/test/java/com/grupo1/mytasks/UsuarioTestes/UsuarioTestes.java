@@ -49,6 +49,7 @@ public class UsuarioTestes extends ExceptionHandlerUsuario {
 //        UsuarioModel mock = Mockito.mock(UsuarioModel.class);
 //        UsuarioModel novoUsuario = usuarioService.cadastrarUsuario(mock);
 //
+//
 //        Assertions.assertThat(mock, novoUsuario);
 //    }
 
