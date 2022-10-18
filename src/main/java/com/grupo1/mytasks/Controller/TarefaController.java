@@ -56,15 +56,17 @@ public class TarefaController extends ExceptionHandlerTarefas {
         return ResponseEntity.status(HttpStatus.OK).body(tarefaService.salvarTarefa(tarefa));
     }
     @PutMapping(path = "/concluir/{id}")
-    public ResponseEntity<Object> concluirTarefa(@PathVariable Long id ){
+    public ResponseEntity<?> concluirTarefa(@PathVariable Long id ){
         Optional<TarefaModel> tarefaModelOptional = tarefaService.exibirTarefaPorId(id);
         if (tarefaModelOptional.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Não foi encontrado tarefa para ser marcada como concluída.");
         }
         var tarefa = new TarefaModel();
         BeanUtils.copyProperties(tarefaModelOptional.get(), tarefa);
+        tarefa.setId(tarefaModelOptional.get().getId());
         tarefa.setConcluido(true);
-        return ResponseEntity.status(HttpStatus.OK).body(tarefaService.salvarTarefa(tarefa));
+        tarefaService.salvarTarefa(tarefa);
+        return ResponseEntity.status(HttpStatus.OK).body("A tarefa " + tarefa.getTitulo() + " foi concluída.");
     }
 
 
