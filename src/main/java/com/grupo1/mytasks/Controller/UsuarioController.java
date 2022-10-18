@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.ConstraintViolationException;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,7 +20,7 @@ public class UsuarioController extends ExceptionHandlerUsuario {
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PostMapping(path = "/usuario")
     @ResponseBody
-    public ResponseEntity<UsuarioModel> cadastrarUsuario(@RequestBody UsuarioModel usuarioModel){
+    public ResponseEntity<UsuarioModel> cadastrarUsuario(@RequestBody UsuarioModel usuarioModel) throws ConstraintViolationException {
         return ResponseEntity.ok(usuarioService.cadastrarUsuario(usuarioModel));
     }
 
