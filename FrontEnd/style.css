@@ -18,7 +18,7 @@ body {
   background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
   background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
 }
-
+/* .......................................................NAVBAR..................................................................................... */
 nav#menu {
   display: block;
   
@@ -37,7 +37,7 @@ nav#menu ul{
 nav#menu li{
 display: inline-block;
 color: #000;
-background-color: rgb(231, 208, 162);
+background-color:#343a40;
 padding: 10px;
 margin: 4px;
 border-radius: 500px;
@@ -49,13 +49,11 @@ nav#menu li:hover {
 }
 
 nav#menu li a {
+  color: #8257e5;
   text-decoration: none;
 }
 
-
-/* button {
-  cursor: pointer;
-} */
+/* .......................................................NAVBAR..................................................................................... */
 
 .container {
   width: 90%;
