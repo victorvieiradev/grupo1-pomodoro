@@ -20,7 +20,7 @@ public class UsuarioTestes {
     private UsuarioService usuarioService;
 
     @Test
-    private void testInstanceOf( ) {
+    public void testInstanceOf() {
         //nesse exemplo estamos apenas verificando se o retorno de buscarUsuarios
         //está retornando uma lista de UsuarioModel
         List<UsuarioModel> todos = usuarioService.buscarUsuarios();
