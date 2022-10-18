@@ -47,7 +47,7 @@ function insertItem(item, index) {
   tr.innerHTML = `
     <td>${item.nome}</td>
     <td>${item.funcao}</td>
-    <td>R$ ${item.salario}</td>
+    <td>${item.salario}</td>
     <td class="acao">
       <button onclick="editItem(${index})"><i class='bx bx-edit' ></i></button>
     </td>
@@ -63,9 +63,9 @@ btnSalvar.onclick = e => {
   if (sNome.value == '' || sFuncao.value == '' || sSalario.value == '') {
     return
   }
-//Inicio da requisição que salva a tarefano banco de dados postgres
-let data = {"titulo": "tarefa de teste 2", "descricao": "descricao da tarefa de teste", "minutos": "60"}
-fetch('http://localhost:8080/tarefas', {
+  let data = {"titulo": sNome.value, "descricao": sFuncao.value, "minutos": sSalario.value}
+
+fetch('http://localhost:8080/v1/tarefa', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -74,10 +74,6 @@ fetch('http://localhost:8080/tarefas', {
 }).then( (response) => response.json().then( (data) => alert("Tarefa cadastrada com sucesso: " + JSON.stringify(data))))
 
 
-
-
-
-//fim do método  que salva a tarefa no banco de dados.
   e.preventDefault();
 
   if (id !== undefined) {
