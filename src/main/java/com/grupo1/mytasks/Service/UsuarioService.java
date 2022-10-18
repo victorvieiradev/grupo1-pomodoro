@@ -3,10 +3,13 @@ package com.grupo1.mytasks.Service;
 import com.grupo1.mytasks.ExceptionHandler.ExceptionHandlerUsuario;
 import com.grupo1.mytasks.Model.UsuarioModel;
 import com.grupo1.mytasks.Repository.UsuarioRepository;
+import com.sun.jdi.request.DuplicateRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
+import javax.management.openmbean.KeyAlreadyExistsException;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -22,8 +25,10 @@ public class UsuarioService  {
     private UsuarioRepository usuarioRepository;
 
     public UsuarioModel cadastrarUsuario(UsuarioModel usuarioModel){
+        if (usuarioRepository.findById(usuarioModel.getCpf()).isPresent()){
+            throw new DuplicateKeyException(usuarioModel.getCpf());
+        }else
       //  usuarioModel.setSenha(passwordEncoder().encode(usuarioModel.getSenha()));
-
         return  usuarioRepository.save(usuarioModel);
     }
 

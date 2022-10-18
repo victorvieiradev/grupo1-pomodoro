@@ -4,10 +4,12 @@ import com.grupo1.mytasks.ExceptionHandler.ExceptionHandlerUsuario;
 import com.grupo1.mytasks.Model.UsuarioModel;
 import com.grupo1.mytasks.Service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.ConstraintViolationException;
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,10 +19,9 @@ public class UsuarioController extends ExceptionHandlerUsuario {
     @Autowired
     private UsuarioService usuarioService;
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PostMapping(path = "/usuario")
-    @ResponseBody
-    public ResponseEntity<UsuarioModel> cadastrarUsuario(@RequestBody UsuarioModel usuarioModel) throws ConstraintViolationException {
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseEntity<UsuarioModel> cadastrarUsuario(@RequestBody @Valid  UsuarioModel usuarioModel) {
         return ResponseEntity.ok(usuarioService.cadastrarUsuario(usuarioModel));
     }
 
