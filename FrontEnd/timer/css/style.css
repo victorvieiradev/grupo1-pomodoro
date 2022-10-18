@@ -201,7 +201,6 @@ nav#menu {
   }
   
   nav#menu ul{
-  
     list-style: none;
     position: relative;
     width: auto;
@@ -221,7 +220,7 @@ nav#menu {
   }
   
   nav#menu li:hover {
-    background-color:rgb(223, 151, 8);
+    background-color:rgb(211, 173, 255);
   }
   
   nav#menu li a {

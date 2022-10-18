@@ -55,12 +55,7 @@ nav#menu li a {
 
 /* .......................................................NAVBAR..................................................................................... */
 
-.container {
-  width: 90%;
-  height: 80%;
-  border-radius: 10px;
-  background: white;
-}
+
 
 .header {
   min-height: 70px;
@@ -81,8 +76,8 @@ nav#menu li a {
   padding: 8px;
   border-radius: 5px;
   border: none;
-  color: white;
-  background-color: rgb(57, 57, 226);
+  color: #8257e5;
+  background-color:#343a40;
 }
 
 .divTable {
@@ -90,11 +85,12 @@ nav#menu li a {
   width: auto; 
   height:inherit; 
   overflow:auto;
+  color: #8257e5;
 }
 
 .divTable::-webkit-scrollbar {
   width: 12px;
-  background-color: whitesmoke; 
+  background-color:#343a40;
 }
 
 .divTable::-webkit-scrollbar-thumb {
@@ -107,14 +103,16 @@ table {
   border-spacing: 10px;
   word-break: break-all;
   border-collapse: collapse;
+  background-color:#343a40;
+  
 }
 
 thead {
-  background-color: whitesmoke;
+  background-color:#343a40;
 }
 
 tr {
-  border-bottom: 1px solid rgb(238, 235, 235)!important;
+  border-bottom: 1px solid #8257e5!important;
 }
 
 tbody tr td {
@@ -141,6 +139,8 @@ thead tr th.acao {
 tbody tr td.acao {
   text-align: center;
 }
+
+/* ----------------------------------------- BOTAO ADICIONAR TAREFA ---------------------------------------- */
 
 @media (max-width: 700px) {
   body {
@@ -183,29 +183,19 @@ tbody tr td.acao {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color:#000000;
   display: none;
   z-index: 999;
   align-items: center;
   justify-content: center;
 }
 
-.modal {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px;
-  background-color: white;
-  border-radius: 10px;
-  width: 50%;
+form#formAtiv label{
+  font-size: 16px;
 }
 
-.modal label {
-  font-size: 14px;
-  width: 100%;
-}
-
-.modal input {
+form#formAtiv input{
+  background-color: #343a40;
   width: 100%;
   outline: none;
   padding: 5px 10px; 
@@ -215,6 +205,25 @@ tbody tr td.acao {
   border-left: none;
   border-right: none;
 }
+form#formAtiv button{
+  font-size: 16px;
+}
+/* Quadro de cadastro de atividade */
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background-color:#343a40;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.modal label {
+  font-size: 14px;
+  width: 100%;
+}
+
 
 .modal button {
   width: 100%;
@@ -224,12 +233,14 @@ tbody tr td.acao {
   padding: 5px 10px; 
   width: 100%;
   border: none;
-  background-color: rgb(57, 57, 226);
-  color: white;
+  color: #8257e5;
 }
 
+/* COR DA LETRA E FUNDO GERAL */
 .active {
   display: flex;
+  color: #8257e5;
+  
 }
 
 .active .modal {
@@ -248,15 +259,18 @@ tbody tr td.acao {
 }
 
 td button {
+  align-items: center;
   border: none;
   outline: none;
-  background: transparent;
+  background-color:transparent;
 }
 
 td button i {
   font-size: 25px;
+  
 }
 
 td button i:first-child {
   margin-right: 10px;
+  color: #8257e5;
 }
