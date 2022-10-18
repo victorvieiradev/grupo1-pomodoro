@@ -12,7 +12,7 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
-public class UsuarioService extends ExceptionHandlerUsuario {
+public class UsuarioService  {
 
 //    private BCryptPasswordEncoder passwordEncoder(){
 //        return new BCryptPasswordEncoder();

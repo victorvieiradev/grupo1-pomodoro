@@ -1,5 +1,6 @@
 package com.grupo1.mytasks.Controller;
 
+import com.grupo1.mytasks.ExceptionHandler.ExceptionHandlerUsuario;
 import com.grupo1.mytasks.Model.UsuarioModel;
 import com.grupo1.mytasks.Service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-public class UsuarioController {
+public class UsuarioController extends ExceptionHandlerUsuario {
 
     @Autowired
     private UsuarioService usuarioService;
