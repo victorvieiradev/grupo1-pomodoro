@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/tarefas")
+@CrossOrigin(origins = "*")
 public class TarefaController extends ExceptionHandlerTarefas {
     private final TarefaService tarefaService;
 

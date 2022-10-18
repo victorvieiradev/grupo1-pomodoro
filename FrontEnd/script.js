@@ -63,18 +63,21 @@ btnSalvar.onclick = e => {
   if (sNome.value == '' || sFuncao.value == '' || sSalario.value == '') {
     return
   }
-  let data = {"nomeUsuario": "Victor", "dataNascimento": "1998-02-09", "email": "victor@victor.com", "cpf":"12345678911"}
-
-fetch('http://localhost:8080/usuarios', {
+//Inicio da requisição que salva a tarefano banco de dados postgres
+let data = {"titulo": "tarefa de teste 2", "descricao": "descricao da tarefa de teste", "minutos": "60"}
+fetch('http://localhost:8080/tarefas', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
   },
-  body: data,
-}).then((response) => response.json())
+  body: JSON.stringify(data),
+}).then( (response) => response.json().then( (data) => alert("Tarefa cadastrada com sucesso: " + JSON.stringify(data))))
 
 
 
+
+
+//fim do método  que salva a tarefa no banco de dados.
   e.preventDefault();
 
   if (id !== undefined) {
