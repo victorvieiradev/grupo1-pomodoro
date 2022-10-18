@@ -71,7 +71,7 @@ fetch('http://localhost:8080/tarefas', {
     'Content-Type': 'application/json',
   },
   body: JSON.stringify(data),
-}).then( (response) => response.json().then( (data) => alert("Tarefa cadastrada com sucesso: " + JSON.stringify(data))))
+}).then( (response) => response.json().then( (data) => console.log("Tarefa cadastrada com sucesso: " + JSON.stringify(data))))
 
 
   e.preventDefault();
