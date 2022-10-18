@@ -39,6 +39,15 @@ function deleteItem(index) {
   itens.splice(index, 1)
   setItensBD()
   loadItens()
+  //Marcando tarefa como concluída.
+  fetch('http://localhost:8080/tarefas/concluir/' + itens.id, {
+  method: 'PUT',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(data),
+}).then( (response) => response.json().then( (data) => id = data.id))
+  //fim do método que marca a tarefa como concluída do banco de dados.
 }
 
 function insertItem(item, index) {
