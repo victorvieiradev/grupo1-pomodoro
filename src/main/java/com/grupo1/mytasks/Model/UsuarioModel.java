@@ -1,6 +1,7 @@
 package com.grupo1.mytasks.Model;
 
 import lombok.Data;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,7 +15,7 @@ public class UsuarioModel implements Serializable {
     @Column(nullable = false, unique = true)
     private String cpf;
 
-    @Column
+    @Column(nullable = false)
     private String nome;
 
     @Column(nullable = false)

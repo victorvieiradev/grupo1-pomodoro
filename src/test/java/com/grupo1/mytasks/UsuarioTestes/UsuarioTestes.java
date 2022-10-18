@@ -1,4 +1,11 @@
+//package com.grupo1.mytasks.UsuarioTestes;
 //
+//import com.grupo1.mytasks.ExceptionHandler.ExceptionHandlerUsuario;
+//import com.grupo1.mytasks.Model.UsuarioModel;
+//import com.grupo1.mytasks.Repository.UsuarioRepository;
+//import com.grupo1.mytasks.Service.UsuarioService;
+//import org.assertj.core.api.Assertions;
+//import org.junit.jupiter.api.Test;
 //import org.mockito.Mock;
 //import org.mockito.Mockito;
 //import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -30,21 +37,21 @@
 //
 //  @Test
 // public void testSizeMock() throws NullPointerException{
-//        nesse exemplo de mock estamos apenas verificando se será retornado pelo menos 1 usuario
+//  //      nesse exemplo de mock estamos apenas verificando se será retornado pelo menos 1 usuario
 //   UsuarioService mock = Mockito.mock(UsuarioService.class);
 //           when(mock.buscarUsuarios().size()).thenCallRealMethod();
 //
 //   Assertions.assertThat(mock.buscarUsuarios()).hasSize(1);
 //  }
 //
-//    @Test
-//    private void testSaveUser(){
-//        //nesse exemplo estamos verificando se estamos conseguindo salvar com sucesso
-//        UsuarioModel mock = Mockito.mock(UsuarioModel.class);
-//        UsuarioModel novoUsuario = usuarioService.cadastrarUsuario(mock);
-//
-//
-//        Assertions.assertThat(mock, novoUsuario);
-//    }
+////    @Test
+////    private void testSaveUser(){
+////        //nesse exemplo estamos verificando se estamos conseguindo salvar com sucesso
+////        UsuarioModel mock = Mockito.mock(UsuarioModel.class);
+////        UsuarioModel novoUsuario = usuarioService.cadastrarUsuario(mock);
+////
+////
+////        Assertions.assertThat(mock, novoUsuario);
+////    }
 //
 //}
