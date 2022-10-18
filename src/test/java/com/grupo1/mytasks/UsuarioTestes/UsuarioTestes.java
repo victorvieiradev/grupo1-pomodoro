@@ -2,6 +2,7 @@ package com.grupo1.mytasks.UsuarioTestes;
 import com.grupo1.mytasks.Model.UsuarioModel;
 import com.grupo1.mytasks.Repository.UsuarioRepository;
 import com.grupo1.mytasks.Service.UsuarioService;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -24,7 +25,8 @@ public class UsuarioTestes {
         //nesse exemplo estamos apenas verificando se o retorno de buscarUsuarios
         //está retornando uma lista de UsuarioModel
         List<UsuarioModel> todos = usuarioService.buscarUsuarios();
-        assertThat(todos, instanceOf(UsuarioModel.class));
+        Assertions.assertThat(todos);
+
     }
 
 //    @Test
