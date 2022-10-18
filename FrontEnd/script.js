@@ -49,10 +49,10 @@ function insertItem(item, index) {
     <td>${item.funcao}</td>
     <td>${item.salario}</td>
     <td class="acao">
-      <button onclick="editItem(${index})"><i class='bx bx-edit' ></i></button>
+      <button onclick="editItem(${item.id})"><i class='bx bx-edit' ></i></button>
     </td>
     <td class="acao">
-      <button onclick="deleteItem(${index})"><i class='bx bx-trash'></i></button>
+      <button onclick="deleteItem(${item.id})"><i class='bx bx-trash'></i></button>
     </td>
   `
   tbody.appendChild(tr)
@@ -80,6 +80,7 @@ console.log("id do objeto salvo: " + id)
     itens[id].nome = sNome.value
     itens[id].funcao = sFuncao.value
     itens[id].salario = sSalario.value
+    itens[id].id = id
   } else {
     itens.push({'nome': sNome.value, 'funcao': sFuncao.value, 'salario': sSalario.value})
   }
