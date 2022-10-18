@@ -65,7 +65,7 @@ btnSalvar.onclick = e => {
   }
   let data = {"titulo": sNome.value, "descricao": sFuncao.value, "minutos": sSalario.value}
 
-fetch('http://localhost:8080/v1/tarefa', {
+fetch('http://localhost:8080/tarefas', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
