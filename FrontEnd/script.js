@@ -67,21 +67,21 @@ function insertItem(item, index) {
   tbody.appendChild(tr)
 }
 
-btnSalvar.onclick = e => {
+btnSalvar.onclick = async e => {
   
   if (sNome.value == '' || sFuncao.value == '' || sSalario.value == '') {
     return
   }
   let data = {"titulo": sNome.value, "descricao": sFuncao.value, "minutos": sSalario.value}
-
+const response = await
 fetch('http://localhost:8080/tarefas', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
   },
   body: JSON.stringify(data),
-}).then( (response) => response.json().then( (data) => id = data.id))
-console.log("id do objeto salvo: " + id)
+});//.then( (response) => response.json().then( (data) => id = data.id))
+console.log("id do objeto salvo: " + response)
 
   e.preventDefault();
 
