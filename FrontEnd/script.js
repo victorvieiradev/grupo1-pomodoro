@@ -5,8 +5,8 @@ const sFuncao = document.querySelector('#descricao')
 const sSalario = document.querySelector('#minutos')
 const btnSalvar = document.querySelector('#btnSalvar')
 
-let itens
-let id
+var itens
+var id
 
 function openModal(edit = false, index = 0) {
   modal.classList.add('active')
@@ -61,38 +61,48 @@ function insertItem(item, index) {
 }
 
 btnSalvar.onclick = async e => {
+  e.preventDefault();
   
   if (sNome.value == '' || sFuncao.value == '' || sSalario.value == '') {
     return
   }
   let data = {"titulo": sNome.value, "descricao": sFuncao.value, "minutos": sSalario.value}
-const response = await
-fetch('http://localhost:8080/tarefas', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(data),
-});//.then( (response) => response.json().then( (data) => id = data.id))
-console.log("id do objeto salvo: " + response)
+try{
+  const response = await fetch('http://localhost:8080/tarefas', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });//.then( (response) => response.json().then( (data) => id = data.id))
+ 
+  
+  const data1 = await response.json();
 
-  e.preventDefault();
+  console.log("id do objeto salvo: ",data1.id)
+  id = data1.id
+  
+    if (id !== undefined) {
+      itens[id].titulo = sNome.value
+      itens[id].descricao = sFuncao.value
+      itens[id].minutos = sSalario.value
+      itens[id].id = id
+    } else {
+      itens.push({'titulo': sNome.value, 'descricao': sFuncao.value, 'minutos': sSalario.value})
+    }
+  
+    setItensBD()
+  
+    modal.classList.remove('active')
+    loadItens()
+    id = undefined
+  }catch{
 
-  if (id !== undefined) {
-    itens[id].titulo = sNome.value
-    itens[id].descricao = sFuncao.value
-    itens[id].minutos = sSalario.value
-    itens[id].id = id
-  } else {
-    itens.push({'titulo': sNome.value, 'descricao': sFuncao.value, 'minutos': sSalario.value})
   }
-
-  setItensBD()
-
-  modal.classList.remove('active')
-  loadItens()
-  id = undefined
 }
+
+
+
 
 function loadItens() {
   itens = getItensBD()
