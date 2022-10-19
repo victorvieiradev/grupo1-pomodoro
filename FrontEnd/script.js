@@ -42,14 +42,13 @@ function deleteItem(index) {
   setItensBD()
   loadItens()
 
-let data = {"titulo": sNome.value, "descricao": sFuncao.value, "minutos": sSalario.value}
-fetch('http://localhost:8080/tarefas/concluir/' + itens.id, {
+fetch('http://localhost:8080/tarefas/concluir/' + id, {
   method: 'PUT',
   headers: {
     'Content-Type': 'application/json',
   },
   body: JSON.stringify(data),
-})//.then( (response) => response.json().then( (data) => id = data.id))
+}).then( (response) => response.json().then( (data) => id = data.id))
   //fim do método que marca a tarefa como concluída do banco de dados.
 }
 
