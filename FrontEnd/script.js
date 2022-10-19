@@ -42,6 +42,7 @@ function deleteItem(index) {
   setItensBD()
   loadItens()
 
+let data = {"titulo": sNome.value, "descricao": sFuncao.value, "minutos": sSalario.value}
 fetch('http://localhost:8080/tarefas/concluir/' + itens.id, {
   method: 'PUT',
   headers: {
