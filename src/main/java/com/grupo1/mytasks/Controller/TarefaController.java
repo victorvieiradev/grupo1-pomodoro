@@ -37,7 +37,7 @@ public class TarefaController extends ExceptionHandlerTarefas {
         return ResponseEntity.ok(tarefaModelOptional.get());
     }
 
-    @DeleteMapping(path = "/{id}")
+    @DeleteMapping(path = "/{id}")kk
     public ResponseEntity<?> excluirTarefa(@PathVariable Long id){
         Optional<TarefaModel> tarefaModel = tarefaService.exibirTarefaPorId(id);
         if (tarefaModel.isEmpty()){
