@@ -34,7 +34,7 @@ function editItem(index) {
   openModal(true, index)
 
   
-
+}
 
 
 function deleteItem(index) {
@@ -42,7 +42,7 @@ function deleteItem(index) {
   setItensBD()
   loadItens()
 
-fetch('http://localhost:8080/tarefas/concluir/' + data1.id, {
+fetch('http://localhost:8080/tarefas/concluir/' + id, {
   method: 'PUT',
   headers: {
     'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ fetch('http://localhost:8080/tarefas/concluir/' + data1.id, {
   //fim do método que marca a tarefa como concluída do banco de dados.
 }
 
-}
+
 
 function insertItem(item, index) {
   let tr = document.createElement('tr')
@@ -92,7 +92,7 @@ try{
   const data1 = await response.json();
 
   console.log("id do objeto salvo: ",data1.id)
- id = data1.id.value
+  id = data1.id.value
 
     if (id !== undefined) {
       itens[id].titulo = sNome.value
