@@ -32,13 +32,25 @@ function openModal(edit = false, index = 0) {
 function editItem(index) {
 
   openModal(true, index)
-}
+
+  
+
+
 
 function deleteItem(index) {
   itens.splice(index, 1)
   setItensBD()
   loadItens()
 
+fetch('http://localhost:8080/tarefas/concluir/' + data1.id, {
+  method: 'PUT',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(data),
+})//.then( (response) => response.json().then( (data) => id = data.id))
+  //fim do método que marca a tarefa como concluída do banco de dados.
+}
 
 }
 
@@ -80,8 +92,8 @@ try{
   const data1 = await response.json();
 
   console.log("id do objeto salvo: ",data1.id)
-  id = data1.id
-  
+ id = data1.id.value
+
     if (id !== undefined) {
       itens[id].titulo = sNome.value
       itens[id].descricao = sFuncao.value
