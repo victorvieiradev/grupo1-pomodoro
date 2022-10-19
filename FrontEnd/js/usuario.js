@@ -1,7 +1,7 @@
 const nome = document.querySelector('#nome')
-const email = document.querySelector('#typeEmailX')
+const email = document.querySelector('#email')
 const cpf = document.querySelector('#cpf')
-const senha = document.querySelector('#typePasswordX')
+const senha = document.querySelector('#senha')
 const btnSalvar = document.querySelector('#salvar')
 
 btnSalvar.onclick = e => {
