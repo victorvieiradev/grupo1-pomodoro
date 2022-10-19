@@ -1,8 +1,8 @@
 const modal = document.querySelector('.modal-container')
 const tbody = document.querySelector('tbody')
-const sNome = document.querySelector('#m-nome')
-const sFuncao = document.querySelector('#m-funcao')
-const sSalario = document.querySelector('#m-salario')
+const sNome = document.querySelector('#titulo')
+const sFuncao = document.querySelector('#descricao')
+const sSalario = document.querySelector('#minutos')
 const btnSalvar = document.querySelector('#btnSalvar')
 
 let itens
@@ -18,16 +18,15 @@ function openModal(edit = false, index = 0) {
   }
 
   if (edit) {
-    sNome.value = itens[index].nome
-    sFuncao.value = itens[index].funcao
-    sSalario.value = itens[index].salario
-    id = index
+    sNome.value = item[itens.id].titulo
+    sFuncao.value = item[itens.id].descricao
+    sSalario.value = item[itens.id].minutos
+    id = item.id
   } else {
     sNome.value = ''
     sFuncao.value = ''
     sSalario.value = ''
   }
-  
 }
 
 function editItem(index) {
@@ -39,24 +38,18 @@ function deleteItem(index) {
   itens.splice(index, 1)
   setItensBD()
   loadItens()
-  //Marcando tarefa como concluída.
-  fetch('http://localhost:8080/tarefas/concluir/' + itens.id, {
-  method: 'PUT',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(data),
-}).then( (response) => response.json().then( (data) => id = data.id))
-  //fim do método que marca a tarefa como concluída do banco de dados.
+
+
 }
 
 function insertItem(item, index) {
   let tr = document.createElement('tr')
 
   tr.innerHTML = `
-    <td>${item.nome}</td>
-    <td>${item.funcao}</td>
-    <td>${item.salario}</td>
+  
+    <td>${item.titulo}</td>
+    <td>${item.descricao}</td>
+    <td>${item.minutos}</td>
     <td class="acao">
       <button onclick="editItem(${item.id})"><i class='bx bx-edit' ></i></button>
     </td>
@@ -86,12 +79,12 @@ console.log("id do objeto salvo: " + response)
   e.preventDefault();
 
   if (id !== undefined) {
-    itens[id].nome = sNome.value
-    itens[id].funcao = sFuncao.value
-    itens[id].salario = sSalario.value
+    itens[id].titulo = sNome.value
+    itens[id].descricao = sFuncao.value
+    itens[id].minutos = sSalario.value
     itens[id].id = id
   } else {
-    itens.push({'nome': sNome.value, 'funcao': sFuncao.value, 'salario': sSalario.value})
+    itens.push({'titulo': sNome.value, 'descricao': sFuncao.value, 'minutos': sSalario.value})
   }
 
   setItensBD()
