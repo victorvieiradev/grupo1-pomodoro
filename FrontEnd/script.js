@@ -31,7 +31,7 @@ function openModal(edit = false, index = 0) {
 
 function editItem(index) {
 
-  
+  openModal(true, index)
 }
 
 function deleteItem(index) {
@@ -46,6 +46,7 @@ function insertItem(item, index) {
   let tr = document.createElement('tr')
 
   tr.innerHTML = `
+  
     <td>${item.titulo}</td>
     <td>${item.descricao}</td>
     <td>${item.minutos}</td>
@@ -73,7 +74,7 @@ fetch('http://localhost:8080/tarefas', {
   },
   body: JSON.stringify(data),
 }).then( (response) => response.json().then( (data) => id = data.id))
-console.log("id do objeto salvo: " + data)
+console.log("id do objeto salvo: " + id)
 
   e.preventDefault();
 
