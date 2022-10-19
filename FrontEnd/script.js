@@ -71,10 +71,10 @@ function insertItem(item, index) {
     <td>${item.descricao}</td>
     <td>${item.minutos}</td>
     <td class="acao">
-      <button onclick="editItem(${item})"><i class='bx bx-edit' ></i></button>
+      <button onclick="editItem(${item.id})"><i class='bx bx-edit' ></i></button>
     </td>
     <td class="acao">
-      <button onclick="deleteItem(${item})"><i class='bx bx-trash'></i></button>
+      <button onclick="deleteItem(${item.id})"><i class='bx bx-trash'></i></button>
     </td>
   `
   tbody.appendChild(tr)
@@ -100,7 +100,7 @@ try{
   const data1 = await response.json();
 
   console.log("id do objeto salvo: ",data1.id)
-  id = data1.id.value
+  let id = data1.id.value
 
     if (id !== undefined) {
       itens[id].titulo = sNome.value
