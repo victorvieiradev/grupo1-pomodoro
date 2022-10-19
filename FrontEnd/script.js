@@ -42,7 +42,7 @@ function deleteItem(index) {
   setItensBD()
   loadItens()
 
-fetch('http://localhost:8080/tarefas/concluir/' + id, {
+fetch('http://localhost:8080/tarefas/concluir/' + itens.id, {
   method: 'PUT',
   headers: {
     'Content-Type': 'application/json',
