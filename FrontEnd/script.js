@@ -8,7 +8,7 @@ const btnSalvar = document.querySelector('#btnSalvar')
 let itens
 let id
 
-function openModal(edit = false, index) {
+function openModal(edit = false, index = 0) {
   modal.classList.add('active')
 
   modal.onclick = e => {
@@ -18,37 +18,27 @@ function openModal(edit = false, index) {
   }
 
   if (edit) {
-    sNome.value = itens[itens.id].titulo
-    sFuncao.value = itens[itens.id].descricao
-    sSalario.value = itens[itens.id].minutos
-    id = itens.id
+    sNome.value = item[itens.id].titulo
+    sFuncao.value = item[itens.id].descricao
+    sSalario.value = item[itens.id].minutos
+    id = item.id
   } else {
     sNome.value = ''
     sFuncao.value = ''
     sSalario.value = ''
   }
-  
 }
 
 function editItem(index) {
 
-  openModal(true, index)
+  
 }
 
 function deleteItem(index) {
   itens.splice(index, 1)
   setItensBD()
   loadItens()
-  //Marcando tarefa como concluída.
-  fetch('http://localhost:8080/tarefas/concluir/' + itens.id, {
-  method: 'PUT',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(data),
-}).then( (response) => response.json().then( (data) => id = data.id))
 
-  //fim do método que marca a tarefa como concluída do banco de dados.
 
 }
 
@@ -83,7 +73,7 @@ fetch('http://localhost:8080/tarefas', {
   },
   body: JSON.stringify(data),
 }).then( (response) => response.json().then( (data) => id = data.id))
-console.log("id do objeto salvo: " + id)
+console.log("id do objeto salvo: " + data)
 
   e.preventDefault();
 
