@@ -38,18 +38,26 @@ function editItem(index) {
 
 
 function deleteItem(index) {
-  itens.splice(index, 1)
-  setItensBD()
-  loadItens()
+loadItens()
 
-fetch('http://localhost:8080/tarefas/concluir/' + id, {
-  method: 'PUT',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(data),
-}).then( (response) => response.json().then( (data) => id = data.id))
-  //fim do método que marca a tarefa como concluída do banco de dados.
+  // console.log(JSON.stringify.index.value)
+  try{
+    const response =  fetch('http://localhost:8080/tarefas/concluir/' + index.id, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+ 
+    
+    ;//.then( (response) => response.json().then( (data) => id = data.id))
+
+  } catch{
+    
+  }
+     itens.splice(index, 1)
+    setItensBD()
 }
 
 
@@ -92,7 +100,7 @@ try{
   const data1 = await response.json();
 
   console.log("id do objeto salvo: ",data1.id)
-  id = data1.id.value
+  let id = data1.id.value
 
     if (id !== undefined) {
       itens[id].titulo = sNome.value
