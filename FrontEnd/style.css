@@ -20,18 +20,20 @@ body {
     
 } 
 
-h3 h1{
-    font-size: 16px;
+
+h3 div{
+    font-size: 14px;
+    text-align: center;
   }
 
-h3 p {
-  font-size: 14;
+h3  div p {
+  font-size: 14px;
 }
 h3{
  
 
 display: list-item;
-color: #000;
+color: #beb8b8;
 background-color:#343a40;
 padding: 10px;
 margin: 2px;
@@ -42,7 +44,6 @@ border-radius: 500px;
 /* .......................................................NAVBAR..................................................................................... */
 nav#menu {
   display: block;
-  
 
 }
 
@@ -57,11 +58,13 @@ nav#menu ul{
 
 nav#menu li{
 display: inline-block;
-color: #000;
+color: rgb(255, 255, 255);
 background-color:#343a40;
 padding: 10px;
 margin: 4px;
 border-radius: 500px;
+
+
 
 }
 
@@ -70,8 +73,9 @@ nav#menu li:hover {
 }
 
 nav#menu li a {
-  color: #8257e5;
+  color: #beb8b8;
   text-decoration: none;
+  border-radius: 15px;
 }
 
 /* .......................................................NAVBAR..................................................................................... */
@@ -90,7 +94,7 @@ nav#menu li a {
   font-weight: 900;
   font-size: 20px;
   word-break: break-all;
-  color:#8257e5;
+  color:#beb8b8;
 }
 
 #new {
@@ -98,7 +102,7 @@ nav#menu li a {
   padding: 8px;
   border-radius: 5px;
   border: none;
-  color: #8257e5;
+  color: #beb8b8;
   background-color:#343a40;
 }
 
@@ -107,7 +111,7 @@ nav#menu li a {
   width: auto; 
   height:inherit; 
   overflow:auto;
-  color: #8257e5;
+  color: #beb8b8;
 }
 
 .divTable::-webkit-scrollbar {
@@ -131,6 +135,7 @@ table {
 
 thead {
   background-color:#343a40;
+  border-color: #8257e5;
 }
 
 tr {
