@@ -47,8 +47,8 @@ public class TarefaController extends ExceptionHandlerTarefas {
         return ResponseEntity.status(HttpStatus.OK).body("Excluída com sucesso.");
     }
 
-    @PutMapping(path = "/{id}")
-    public ResponseEntity<?> atualizarTarefa(@PathVariable @RequestBody Long id, TarefaModel tarefa) {
+    @PutMapping(path = "/editar/{id}")
+    public ResponseEntity<?> atualizarTarefa(@PathVariable  Long id, @RequestBody TarefaModel tarefa) {
         Optional<TarefaModel> tarefaModelOptional = tarefaService.exibirTarefaPorId(id);
         if (tarefaModelOptional.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Não existe tarefa para ser atualizada.");
