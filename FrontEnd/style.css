@@ -17,7 +17,28 @@ body {
   background-color: #121214;
     font-family: 'Roboto', sans-serif;
     color: var(--color-white);
+    
+} 
+
+h3 h1{
+    font-size: 16px;
+  }
+
+h3 p {
+  font-size: 14;
 }
+h3{
+ 
+
+display: list-item;
+color: #000;
+background-color:#343a40;
+padding: 10px;
+margin: 2px;
+border-radius: 500px;
+
+}
+
 /* .......................................................NAVBAR..................................................................................... */
 nav#menu {
   display: block;
