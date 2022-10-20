@@ -113,77 +113,6 @@ function openModalEdit(item) {
 }
 }
 
-
-// async function editItem(item, index) {
-// console.log(JSON.stringify(item));
-
-// openModal(item)
-
-// if (sNome.value == '' || sFuncao.value == '' || sSalario.value == '') {
-//   return
-// }
-// const payload = {"titulo": sNome.value, "descricao": sFuncao.value, "minutos": sSalario.value}
-// try{
-//   const response = await fetch(`http://localhost:8080/tarefas/${id}`, {
-//     method: 'PUT',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body:JSON.stringify(payload),
-//   })
-
-//   const data = await response.json();
-//   itens.splice(index, 1)
-
-//   itens.push(data)
-//   setItensBD()
-
-//   modal.classList.remove('active')
-//   loadItens()
-
-// } catch{
-  
-// }
-
-  
-// }
-
-// btnSalvar.onclick = async e => {
-//   e.preventDefault();
-  
-//   if (sNome.value == '' || sFuncao.value == '' || sSalario.value == '') {
-//     return
-//   }
-//   const payload = {"titulo": sNome.value, "descricao": sFuncao.value, "minutos": sSalario.value}
-// try{
-//   const response = await fetch('http://localhost:8080/tarefas', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(payload),
-//   });
- 
-  
-//   const data = await response.json();
-
-  
-//   // let id = data.id.value
-
-//   // console.log("id do objeto salvo: ", id)
-//       itens.push(data)
-    
-  
-//     setItensBD()
-  
-//     modal.classList.remove('active')
-//     loadItens()
-//     // id = undefined
-//   }catch{
-
-//   }
-// }
-
 async function deleteItem(id, index)  {
 
 
@@ -206,7 +135,6 @@ async function deleteItem(id, index)  {
   }
     
 }
-
 
 function loadItens() {
   itens = getItensBD()
