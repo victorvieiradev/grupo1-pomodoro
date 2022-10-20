@@ -101,8 +101,8 @@ function openModalEdit(item) {
     const data = await response.json();
     
       itens.push(data)
-      deleteItem(item.id)
-    
+       deleteItem(item)
+      
       setItensBD()
       loadItens()
 
@@ -114,6 +114,12 @@ function openModalEdit(item) {
 }
 
 async function deleteItem(id, index)  {
+    itens.splice(index, 1)
+    setItensBD()
+    loadItens()
+}
+
+async function marcarConcluidoItem(id, index)  {
 
 
 
@@ -165,7 +171,7 @@ function insertItem(item, index) {
 
   const acaoDelete = document.createElement('td');
   const deleteItemButton = document.createElement('button');
-  deleteItemButton.onclick = () => deleteItem(item.id);
+  deleteItemButton.onclick = () => marcarConcluidoItem(item.id);
   const bxDelete = document.createElement('i');
   bxDelete.className = 'bx bx-trash';
   deleteItemButton.appendChild(bxDelete)
