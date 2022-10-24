@@ -150,6 +150,10 @@ function loadItens() {
 
 }
 
+// function iniciarTimer(minutos){
+  
+// }
+
 function insertItem(item, index) {
   let tr = document.createElement('tr')
 
@@ -191,9 +195,10 @@ function insertItem(item, index) {
   // BOTAO INICIAR TIMER
   const acaoStart = document.createElement('td');
   const startItemButton = document.createElement('button');
-  startItemButton.onclick = () => deleteItem(item.id);
+  // startItemButton.setAttribute("id", "start")
+ // startItemButton.setAttribute("d", "M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z")
   const bxStart = document.createElement('i');
-  bxStart.className = 'fa-solid fa-play';
+  bxStart.className = 'fa-solid fa-play' ;
   startItemButton.appendChild(bxStart)
   acaoStart.appendChild(startItemButton)
 
