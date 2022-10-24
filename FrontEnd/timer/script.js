@@ -101,9 +101,3 @@ btModal.addEventListener('click', () => {
     containerModal.style.display = 'none'
 })
 
-// Alterar Timer
-fetch("http://localhost:8080/tarefas/ultima").then((result) => {
-    return result.json()
-}).then(data => {
-    console.log(data.minutos)
-})
