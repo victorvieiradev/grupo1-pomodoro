@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "usuario")
 public class UsuarioModel implements Serializable, UserDetails {

@@ -28,6 +28,8 @@ public class TarefaController extends ExceptionHandlerTarefas {
     public ResponseEntity<List<TarefaModel>> exibirTarefas(){
         return ResponseEntity.status(HttpStatus.OK).body(tarefaService.exibirTarefas());
     }
+
+
     @GetMapping(path = "/{id}")
     public ResponseEntity<?> exibirTarefaPorId(@PathVariable Long id){
         Optional<TarefaModel> tarefaModelOptional = tarefaService.exibirTarefaPorId(id);
