@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.ConstraintViolationException;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
@@ -29,6 +28,11 @@ public class UsuarioController extends ExceptionHandlerUsuario {
     @GetMapping(path = "/usuario")
     public ResponseEntity<List<UsuarioModel>> buscarUsuarios(){
         return ResponseEntity.ok(usuarioService.buscarUsuarios());
+    }
+
+    @GetMapping(path = "/usuario/login/{email}/{senha}")
+    public ResponseEntity<List<UsuarioModel>> login(@PathVariable String senha, @PathVariable String email){
+        return ResponseEntity.ok(usuarioService.buscarPorEmail(email, senha));
     }
 
     @GetMapping(path = "/usuario/{cpf}")

@@ -301,3 +301,14 @@ td button i:first-child {
   margin-right: 10px;
   color: #8257e5;
 }
+
+tr#element{
+  
+  color: #8257e5;
+  
+}
+
+/* <i id="check" class="fa-regular fa-circle-check"></i>
+<i class="fa-solid fa-pen"></i>
+<i class="fa-solid fa-play"></i>
+<i class="fa-solid fa-trash"></i>
