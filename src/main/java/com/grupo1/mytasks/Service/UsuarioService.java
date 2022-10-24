@@ -47,7 +47,7 @@ public class UsuarioService  {
             throw new NoSuchElementException();
     }
 
-    public List<UsuarioModel> buscarPorEmail(String email, String senha){
+    public Optional<UsuarioModel> buscarPorEmail(String email, String senha){
         if(!usuarioRepository.findByEmail(email).isEmpty()){
             if (!usuarioRepository.findBySenha(senha).isEmpty()){
                 return usuarioRepository.findByEmail(email);

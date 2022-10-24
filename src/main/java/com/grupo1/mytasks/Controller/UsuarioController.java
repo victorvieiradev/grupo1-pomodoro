@@ -3,7 +3,7 @@ package com.grupo1.mytasks.Controller;
 import com.grupo1.mytasks.ExceptionHandler.ExceptionHandlerUsuario;
 import com.grupo1.mytasks.Model.UsuarioModel;
 import com.grupo1.mytasks.Service.UsuarioService;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -39,7 +39,7 @@ public class UsuarioController extends ExceptionHandlerUsuario {
     }
 
     @GetMapping(path = "/usuario/login/{email}/{senha}")
-    public ResponseEntity<List<UsuarioModel>> login(@PathVariable String senha, @PathVariable String email){
+    public ResponseEntity<Optional<UsuarioModel>> login(@PathVariable String senha, @PathVariable String email){
         return ResponseEntity.ok(usuarioService.buscarPorEmail(email, senha));
     }
 
