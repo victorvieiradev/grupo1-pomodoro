@@ -6,6 +6,7 @@ import com.grupo1.mytasks.Service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.ConstraintViolationException;
@@ -17,12 +18,19 @@ import java.util.Optional;
 @CrossOrigin(origins = "*")
 public class UsuarioController extends ExceptionHandlerUsuario {
 
-    @Autowired
-    private UsuarioService usuarioService;
+
+    private final UsuarioService usuarioService;
+    private final PasswordEncoder encoder;
+
+    public UsuarioController(UsuarioService usuarioService, PasswordEncoder encoder) {
+        this.usuarioService = usuarioService;
+        this.encoder = encoder;
+    }
 
     @PostMapping(path = "/usuario")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<UsuarioModel> cadastrarUsuario(@RequestBody @Valid  UsuarioModel usuarioModel) {
+        usuarioModel.setSenha(encoder.encode(usuarioModel.getSenha()));
         return ResponseEntity.ok(usuarioService.cadastrarUsuario(usuarioModel));
     }
 
