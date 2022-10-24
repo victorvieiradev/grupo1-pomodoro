@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 @Component
@@ -27,7 +28,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             throw new UsernameNotFoundException("Usuário [" + username + "] não encontrado");
         }
 
-        return new User(usuario.get().getUsername(), usuario.get().getPassword(), true, true, true, true, usuario.get().getAuthorities());
+        return new User(usuario.get().getEmail(), usuario.get().getSenha(), true, true, true, true, new ArrayList<>());
     }
 
 }
