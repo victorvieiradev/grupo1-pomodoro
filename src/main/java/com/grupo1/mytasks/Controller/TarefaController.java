@@ -28,6 +28,8 @@ public class TarefaController extends ExceptionHandlerTarefas {
     public ResponseEntity<List<TarefaModel>> exibirTarefas(){
         return ResponseEntity.status(HttpStatus.OK).body(tarefaService.exibirTarefas());
     }
+
+
     @GetMapping(path = "/{id}")
     public ResponseEntity<?> exibirTarefaPorId(@PathVariable Long id){
         Optional<TarefaModel> tarefaModelOptional = tarefaService.exibirTarefaPorId(id);
@@ -37,7 +39,7 @@ public class TarefaController extends ExceptionHandlerTarefas {
         return ResponseEntity.ok(tarefaModelOptional.get());
     }
 
-    @DeleteMapping(path = "/{id}")kk
+    @DeleteMapping(path = "/{id}")
     public ResponseEntity<?> excluirTarefa(@PathVariable Long id){
         Optional<TarefaModel> tarefaModel = tarefaService.exibirTarefaPorId(id);
         if (tarefaModel.isEmpty()){

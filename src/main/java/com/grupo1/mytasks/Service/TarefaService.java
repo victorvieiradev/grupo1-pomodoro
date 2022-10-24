@@ -3,6 +3,7 @@ package com.grupo1.mytasks.Service;
 import com.grupo1.mytasks.Model.TarefaModel;
 import com.grupo1.mytasks.Repository.TarefaRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -22,6 +23,7 @@ public class TarefaService {
     public List<TarefaModel> exibirTarefas(){
         return tarefaRepository.findAll();
     }
+
     public Optional<TarefaModel> exibirTarefaPorId(Long id){
         return tarefaRepository.findById(id);
     }
