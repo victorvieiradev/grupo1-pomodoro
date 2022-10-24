@@ -10,6 +10,8 @@ import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "usuario")
 public class UsuarioModel implements Serializable {
