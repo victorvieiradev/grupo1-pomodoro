@@ -1,15 +1,12 @@
 package com.grupo1.mytasks.Service;
 
-import com.grupo1.mytasks.ExceptionHandler.ExceptionHandlerUsuario;
 import com.grupo1.mytasks.Model.UsuarioModel;
 import com.grupo1.mytasks.Repository.UsuarioRepository;
-import com.sun.jdi.request.DuplicateRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
-import javax.management.openmbean.KeyAlreadyExistsException;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -48,6 +45,15 @@ public class UsuarioService  {
             return usuarioRepository.findById(cpf);
         }else
             throw new NoSuchElementException();
+    }
+
+    public List<UsuarioModel> buscarPorEmail(String email, String senha){
+        if(!usuarioRepository.findByEmail(email).isEmpty()){
+            if (!usuarioRepository.findBySenha(senha).isEmpty()){
+                return usuarioRepository.findByEmail(email);
+            }
+        }
+        return null;
     }
     public UsuarioModel alterarUsuario(UsuarioModel usuarioModel) {
 
