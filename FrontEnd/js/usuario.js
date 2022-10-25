@@ -5,7 +5,9 @@ const senha = document.querySelector('#senha')
 const btnSalvar = document.querySelector('#salvar')
 const btnEntrar = document.querySelector('#btnEntrar')
 
-btnSalvar.onclick = e => {
+
+
+btnSalvar.onclick =  e => {
   
     if (nome.value == '' || cpf.value == '' || email.value == '' || senha.value == '') {
       return
@@ -27,27 +29,5 @@ btnSalvar.onclick = e => {
 
 
 
-//  btnEntrar.onclick = async e  =>{
-
-//   if (email.value == '' || senha.value == '') {
-//     return
-//   }
-//   let data = {"email": email.value, "senha":senha.value}
-
-//   const response = await fetch('http://localhost:8080/login', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(data),
-//   },
-
-//   const token = response;
-//   // if(response == )
-
-
-//   window.location.href = "../homeU.html";
-
-// }
 
 
