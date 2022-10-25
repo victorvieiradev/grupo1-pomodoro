@@ -40,6 +40,7 @@ function openModal(item) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'token' : localStorage.getItem(token)
         },
         body: JSON.stringify(payload),
       });
@@ -94,6 +95,7 @@ function openModalEdit(item) {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
+        'token' : localStorage.getItem(token)
       },
       body: JSON.stringify(payload),
     });
@@ -128,6 +130,7 @@ async function marcarConcluidoItem(id, index)  {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
+        'token' : localStorage.getItem(token)
       },
       body:{},
     })

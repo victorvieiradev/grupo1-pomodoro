@@ -22,7 +22,8 @@ btnSalvar.onclick =  e => {
     body: JSON.stringify(data),
   }).then( (response) => response.json().then( (data) => alert("Tarefa cadastrada com sucesso: " + JSON.stringify(data))))
   e.preventDefault();
-  window.location.href = "login.html";
+  // window.location.href = "login.html";
+  
 
   
 }
