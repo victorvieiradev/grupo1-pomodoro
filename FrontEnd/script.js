@@ -118,6 +118,15 @@ function openModalEdit(item) {
 }
 
 async function deleteItem(id, index)  {
+  const response = await fetch(`http://localhost:8080/tarefas/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      'token' : localStorage.getItem(token)
+    },
+    body:{},
+  })
+
     itens.splice(index, 1)
     setItensBD()
     loadItens()
@@ -155,9 +164,9 @@ function loadItens() {
 
 }
 
-// function iniciarTimer(minutos){
-  
-// }
+function iniciarTimer(sSalario){
+  window.location.href = "tarefas.html";
+}
 
 function insertItem(item, index) {
   let tr = document.createElement('tr')
@@ -221,5 +230,4 @@ const setItensBD = () => localStorage.setItem('dbfunc', JSON.stringify(itens))
 
 loadItens()
 } else
-
-window.location.href = "tarefas.html";
+window.location.href = "login.html";

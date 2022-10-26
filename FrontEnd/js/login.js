@@ -5,12 +5,10 @@ var token
 
 
 
- btnEntrar.onclick = async e  =>{
-    e.preventDefault();
 
-    if (email.value == '' || senha.value == '') {
-      return
-    }
+ btnEntrar.onclick = async ()  =>{
+
+
     let paylog = {"email": email.value, "senha":senha.value}
   
     const response = await fetch('http://localhost:8080/login', {
@@ -20,17 +18,18 @@ var token
       },
       body: JSON.stringify(paylog),
     })
-  
-    
-    
+   
+    const reader = response.text
+    const result = await reader.read()
+    console.log(result.value)
 
-    if(response.status == 200){
-        // window.location.href = "tarefas.html";
-        // localStorage.setItem("token", response.token)
-        console.log(response)
+    // if(response.status == 200){
+    //     window.location.href = "tarefas.html";
+    //     localStorage.setItem("token", response.token)
+    //     console.log(response.token.JSON)
         
         
-    }
+    // }
 
     
   }
