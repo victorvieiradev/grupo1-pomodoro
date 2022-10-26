@@ -21,6 +21,6 @@ fetch('http://localhost:8080/login', {
 }).then(data => {
   const token = data.split(" ")[1]
   localStorage.setItem("token", token)
-  window.location.href = "homeU.html"
+  window.location.href = "home.html"
 })
 }
