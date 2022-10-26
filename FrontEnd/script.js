@@ -164,9 +164,7 @@ function loadItens() {
 
 }
 
-function iniciarTimer(sSalario){
-  window.location.href = "tarefas.html";
-}
+
 
 function insertItem(item, index) {
   let tr = document.createElement('tr')
@@ -209,6 +207,7 @@ function insertItem(item, index) {
   // BOTAO INICIAR TIMER
   const acaoStart = document.createElement('td');
   const startItemButton = document.createElement('button');
+  startItemButton.setAttribute('id = "start"')
   const bxStart = document.createElement('i');
   bxStart.className = 'fa-solid fa-play' ;
   startItemButton.appendChild(bxStart)

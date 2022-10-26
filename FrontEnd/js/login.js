@@ -4,7 +4,7 @@ const btnEntrar = document.querySelector('#btnEntrar')
 var token
 
 btnEntrar.onclick =  e => {
-  
+  e.preventDefault();
   if (email.value == '' || senha.value == '') {
     return
   }
@@ -17,7 +17,7 @@ fetch('http://localhost:8080/login', {
   },
   body: JSON.stringify(data),
 }).then( (response) => response.text().then( (data) => alert("O token é:  " + JSON.stringify(data))))
-e.preventDefault();
+
 // window.location.href = "login.html";
 
 
