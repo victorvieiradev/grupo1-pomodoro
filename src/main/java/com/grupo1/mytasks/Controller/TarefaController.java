@@ -24,6 +24,8 @@ public class TarefaController extends ExceptionHandlerTarefas {
     public ResponseEntity<TarefaModel> salvarTarefa(@RequestBody TarefaModel tarefa ){
         return ResponseEntity.status(HttpStatus.CREATED).body(tarefaService.salvarTarefa(tarefa));
     }
+
+
     @GetMapping
     public ResponseEntity<List<TarefaModel>> exibirTarefas(){
         return ResponseEntity.status(HttpStatus.OK).body(tarefaService.exibirTarefas());

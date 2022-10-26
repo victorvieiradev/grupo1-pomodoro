@@ -17,12 +17,10 @@ fetch('http://localhost:8080/login', {
   },
   body: JSON.stringify(data),
 }).then( (response) => response.text().then( (data) => localStorage.setItem("token",JSON.stringify(data.split(" ", 2)[1]))))
-window.location.href = "homeU.html"
+
+
+
+//  window.location.href = "homeU.html"
+
+
 }
-
-
-
-
-
-
- 

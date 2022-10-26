@@ -9,6 +9,7 @@ var itens
 var id
 
 if(token != null){
+
 function openModal(item) {
   modal.classList.add('active')
 
@@ -42,7 +43,7 @@ function openModal(item) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'token' : localStorage.getItem("token")
+          'Token' : localStorage.getItem("token")
         },
         body: JSON.stringify(payload),
       });
