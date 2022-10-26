@@ -4,33 +4,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timer Usuaruario</title>
-
-    <link rel="shortcut icon" href="../timer/icons/timer-icon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="../timer/css/style.css">
+    <title>Timer</title>
+    
+    <link rel="shortcut icon" href="icons/timer-icon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../timer/css/responsive.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
     <header id="cabecalho">
         <nav id="menu" >
             <ul type="disc">
-              <li class="nav-item">
-                <a class="nav-link active" href="home.html">Home</a>
-             </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="tarefas.html">Tarefas</a>
+                    <a class="nav-link active" href="../home.html">Home</a>
+                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="../tarefas/tarefas.html">Tarefas</a>
                 </li>
+
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="login.html">Login</a>
+                <a class="nav-link active" aria-current="page" href="../login.html">Login</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="timerUser.html">Timer</a>
+                <a class="nav-link active" aria-current="page" href="timer/timer.html">Timer</a>
               </li>
             </ul>
       </nav> 
     </header>
+    <div id="modal-container">
+        <div id="modal-info">
+            <div id="box-modal">
+                <div id="modal-title">
+                    <h1>Como funciona o método Pomodoro?</h1>
+                </div>
+                <div id="description">
+                    <p>
+                        O método Pomodoro é simples e dura duas horas. Primeiro, você realiza uma atividade durante 25 minutos. Quando acabar o tempo, descansa 5 minutos. Assim sucessivamente até que complete as duas horas. Como recompensa, você descansa mais 30 minutos.
+                    </p>
+                    <br>
+                    <p>
+                        <h2 style="margin-bottom: 10px;">Descansos</h2>
+                        Durante o tempo de descanso, é interessante não fazer nada que requeira muito esforço mental. Caso contrário, sua mente não será capaz de reorganizar e integrar o que você aprendeu. Como resultado, você não será capaz de dar ao próximo Pomodoro o seu melhor esforço.
+                        Nesse intervalo, você pode comer, beber um copo d’água, ver televisão, fazer um alongamento, acessar as redes sociais ou apenas relaxar da forma que achar melhor. 
+                    </p>
+                    <br>
+                    <p>
+                        <h2 style="margin-bottom: 10px;">Vantagens de usar a técnica Pomodoro</h2>
+                        <ul>
+                        <li>Alivia a ansiedade;</li>
+
+                        <li>Aumenta o foco e a concentração por meio da redução das interrupções;</li>
+
+                        <li>Aumenta a conscientização das decisões;</li>
+
+                        <li>Aumenta a motivação e mantém-na constante;</li>
+
+                        <li>Reforça a determinação para atingir os objetivos;</li>
+
+                        <li>Melhora o processo de trabalho ou estudo;</li>
+
+                        <li>Reforça sua determinação de continuar a aplicar-se em face de complexas situações.</li>
+                        </ul>
+                    </p>
+                </div>
+                <div id="button-modal">
+                    <button id="bt-modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="box-principal">
         <div id="box-central">      
             
@@ -73,16 +117,6 @@
                 </button>
             </div>
         </div>
-        <div class="modal-container">
-            <div class="modal">
-              <form id="formAtiv">
-                <label for="minutos">Tempo em minutos</label>
-                <input id="minutos" type="number" required />
-                <button id="btnSalvar">Salvar</button>
-              </form>
-            </div>
-          </div>
-
     </div>
 
     <script src="timerUser.js"></script>

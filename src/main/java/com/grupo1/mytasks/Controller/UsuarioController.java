@@ -26,6 +26,7 @@ public class UsuarioController extends ExceptionHandlerUsuario {
         this.encoder = encoder;
     }
 
+
     @PostMapping(path = "/usuario")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<UsuarioModel> cadastrarUsuario(@RequestBody @Valid  UsuarioModel usuarioModel) {

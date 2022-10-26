@@ -70,12 +70,14 @@ function openModal(item) {
 function openModalEdit(item) {
   modal.classList.add('active')
 
-
   if (item) {
+
+
     sNome.value = item.titulo
     sFuncao.value = item.descricao
     sSalario.value = item.minutos
     id = item.id 
+    
      modal.onclick = e => {
       if (e.target.className.indexOf('modal-container') !== -1) {
         modal.classList.remove('active')
@@ -107,7 +109,7 @@ function openModalEdit(item) {
     const data = await response.json();
     
       itens.push(data)
-       deleteItem(item)
+       deleteItem(item.id)
       
       setItensBD()
       loadItens()
@@ -119,7 +121,10 @@ function openModalEdit(item) {
 }
 }
 
+
 async function deleteItem(id, index)  {
+  
+
   const response = await fetch(`http://localhost:8080/tarefas/${id}`, {
     method: 'DELETE',
     headers: {
@@ -127,7 +132,8 @@ async function deleteItem(id, index)  {
       'Authorization': 'Bearer ' + localStorage.getItem("token")
     },
     body:{},
-  })
+  });
+
 
     itens.splice(index, 1)
     setItensBD()
@@ -200,6 +206,7 @@ function insertItem(item, index) {
   // BOTAO DELETAR TAREFA
   const acaoDelete = document.createElement('td');
   const deleteItemButton = document.createElement('button');
+  deleteItemButton.setAttribute('id', 'deletar')
   deleteItemButton.onclick = () => deleteItem(item.id);
   const bxDelete = document.createElement('i');
   bxDelete.className = 'fa-solid fa-trash';

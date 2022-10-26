@@ -26,6 +26,7 @@ public class TarefaController extends ExceptionHandlerTarefas {
     }
 
 
+    @CrossOrigin(origins = "*")
     @GetMapping
     public ResponseEntity<List<TarefaModel>> exibirTarefas(){
         return ResponseEntity.status(HttpStatus.OK).body(tarefaService.exibirTarefas());
@@ -41,6 +42,7 @@ public class TarefaController extends ExceptionHandlerTarefas {
         return ResponseEntity.ok(tarefaModelOptional.get());
     }
 
+    @CrossOrigin(origins = "*")
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<?> excluirTarefa(@PathVariable Long id){
         Optional<TarefaModel> tarefaModel = tarefaService.exibirTarefaPorId(id);
@@ -51,6 +53,7 @@ public class TarefaController extends ExceptionHandlerTarefas {
         return ResponseEntity.status(HttpStatus.OK).body("Excluída com sucesso.");
     }
 
+    @CrossOrigin(origins = "*")
     @PutMapping(path = "/editar/{id}")
     public ResponseEntity<?> atualizarTarefa(@PathVariable  Long id, @RequestBody TarefaModel tarefa) {
         Optional<TarefaModel> tarefaModelOptional = tarefaService.exibirTarefaPorId(id);
@@ -60,6 +63,8 @@ public class TarefaController extends ExceptionHandlerTarefas {
         tarefa.setId(tarefaModelOptional.get().getId());
         return ResponseEntity.status(HttpStatus.OK).body(tarefaService.salvarTarefa(tarefa));
     }
+
+    @CrossOrigin(origins = "*")
     @PutMapping(path = "/concluir/{id}")
     public ResponseEntity<?> concluirTarefa(@PathVariable Long id ){
         Optional<TarefaModel> tarefaModelOptional = tarefaService.exibirTarefaPorId(id);
