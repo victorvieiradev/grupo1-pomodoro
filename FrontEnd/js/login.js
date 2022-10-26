@@ -1,7 +1,7 @@
 const email = document.querySelector('#email')
 const senha = document.querySelector('#senha')
 const btnEntrar = document.querySelector('#btnEntrar')
-var token
+let token
 
 btnEntrar.onclick =  e => {
   e.preventDefault();
@@ -16,12 +16,8 @@ fetch('http://localhost:8080/login', {
     'Content-Type': 'application/json',
   },
   body: JSON.stringify(data),
-}).then( (response) => response.text().then( (data) => alert("O token é:  " + JSON.stringify(data))))
-
-// window.location.href = "login.html";
-
-
-
+}).then( (response) => response.text().then( (data) => localStorage.setItem("token",JSON.stringify(data.split(" ", 2)[1]))))
+window.location.href = "homeU.html"
 }
 
 
