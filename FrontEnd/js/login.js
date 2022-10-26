@@ -16,7 +16,7 @@ fetch('http://localhost:8080/login', {
     'Content-Type': 'application/json',
   },
   body: JSON.stringify(data),
-}).then( (response) => response.text().then( (data) => alert("Tarefa cadastrada com sucesso: " + JSON.stringify(data))))
+}).then( (response) => response.text().then( (data) => alert("O token é:  " + JSON.stringify(data))))
 e.preventDefault();
 // window.location.href = "login.html";
 
