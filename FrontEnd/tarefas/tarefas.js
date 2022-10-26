@@ -5,6 +5,7 @@ const sFuncao = document.querySelector('#descricao')
 const sSalario = document.querySelector('#minutos')
 const btnSalvar = document.querySelector('#btnSalvar')
 const token = localStorage.getItem("token")
+
 var itens
 var id
 
@@ -142,7 +143,7 @@ async function marcarConcluidoItem(id, index)  {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem("token")
+       'Authorization': 'Bearer ' + localStorage.getItem("token")
       },
       body:{},
     })
@@ -208,7 +209,6 @@ function insertItem(item, index) {
   // BOTAO INICIAR TIMER
   const acaoStart = document.createElement('td');
   const startItemButton = document.createElement('button');
-
   const bxStart = document.createElement('i');
   bxStart.className = 'fa-solid fa-play' ;
   startItemButton.appendChild(bxStart)
