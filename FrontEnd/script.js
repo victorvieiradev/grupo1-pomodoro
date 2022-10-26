@@ -4,10 +4,11 @@ const sNome = document.querySelector('#titulo')
 const sFuncao = document.querySelector('#descricao')
 const sSalario = document.querySelector('#minutos')
 const btnSalvar = document.querySelector('#btnSalvar')
-
+const token = localStorage.getItem("token")
 var itens
 var id
 
+if(token != null){
 function openModal(item) {
   modal.classList.add('active')
 
@@ -30,6 +31,7 @@ function openModal(item) {
 
   btnSalvar.onclick  = async e => {
       e.preventDefault();
+      
       
       if (sNome.value == '' || sFuncao.value == '' || sSalario.value == '') {
         return
@@ -218,3 +220,6 @@ const getItensBD = () => JSON.parse(localStorage.getItem('dbfunc')) ?? []
 const setItensBD = () => localStorage.setItem('dbfunc', JSON.stringify(itens))
 
 loadItens()
+} else
+
+window.location.href = "tarefas.html";
