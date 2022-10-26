@@ -24,3 +24,10 @@ fetch('http://localhost:8080/login', {
   window.location.href = "home.html"
 })
 }
+
+
+function sair(){
+
+  localStorage.removeItem("token")
+ 
+ }
