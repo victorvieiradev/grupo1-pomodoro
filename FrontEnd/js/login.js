@@ -1,8 +1,7 @@
 const email = document.querySelector('#email')
 const senha = document.querySelector('#senha')
+
 var token
-
-
 
 
 
@@ -20,15 +19,18 @@ var token
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(paylog),
-    });
-    const data = await JSON.stringify(response)
-    console.log(response)
-
-    // if(response.status == 200){
-    //     // window.location.href = "tarefas.html";
-    //     localStorage.setItem("token", response.token)
-        
-    // }
-
+    })
   
+    
+    
+
+    if(response.status == 200){
+        // window.location.href = "tarefas.html";
+        // localStorage.setItem("token", response.token)
+        console.log(response)
+        
+        
+    }
+
+    
   }
