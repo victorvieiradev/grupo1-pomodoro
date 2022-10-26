@@ -16,11 +16,11 @@ fetch('http://localhost:8080/login', {
     'Content-Type': 'application/json',
   },
   body: JSON.stringify(data),
-}).then( (response) => response.text().then( (data) => localStorage.setItem("token",JSON.stringify(data.split(" ", 2)[1]))))
-
-
-
-//  window.location.href = "homeU.html"
-
-
+}).then( (response) => {
+  return response.text()
+}).then(data => {
+  const token = data.split(" ")[1]
+  localStorage.setItem("token", token)
+  window.location.href = "homeU.html"
+})
 }

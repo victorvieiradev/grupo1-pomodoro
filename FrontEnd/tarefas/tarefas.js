@@ -43,7 +43,7 @@ function openModal(item) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Token' : localStorage.getItem("token")
+          'Authorization': 'Bearer ' + localStorage.getItem("token")
         },
         body: JSON.stringify(payload),
       });
@@ -98,7 +98,7 @@ function openModalEdit(item) {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'token' : localStorage.getItem(token)
+        'Authorization': 'Bearer ' + localStorage.getItem("token")
       },
       body: JSON.stringify(payload),
     });
@@ -123,7 +123,7 @@ async function deleteItem(id, index)  {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
-      'token' : localStorage.getItem(token)
+      'Authorization': 'Bearer ' + localStorage.getItem("token")
     },
     body:{},
   })
@@ -142,7 +142,7 @@ async function marcarConcluidoItem(id, index)  {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'token' : localStorage.getItem(token)
+        'Authorization': 'Bearer ' + localStorage.getItem("token")
       },
       body:{},
     })
@@ -208,7 +208,7 @@ function insertItem(item, index) {
   // BOTAO INICIAR TIMER
   const acaoStart = document.createElement('td');
   const startItemButton = document.createElement('button');
-  startItemButton.setAttribute('id = "start"')
+
   const bxStart = document.createElement('i');
   bxStart.className = 'fa-solid fa-play' ;
   startItemButton.appendChild(bxStart)
