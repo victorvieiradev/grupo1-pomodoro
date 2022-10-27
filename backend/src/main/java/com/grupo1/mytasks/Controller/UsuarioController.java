@@ -30,7 +30,7 @@ public class UsuarioController extends ExceptionHandlerUsuario {
     @PostMapping(path = "/usuario")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<UsuarioModel> cadastrarUsuario(@RequestBody @Valid  UsuarioModel usuarioModel) {
-        usuarioModel.setSenha(encoder.encode(usuarioModel.getSenha()));
+        //usuarioModel.setSenha(encoder.encode(usuarioModel.getSenha()));
         return ResponseEntity.ok(usuarioService.cadastrarUsuario(usuarioModel));
     }
 
