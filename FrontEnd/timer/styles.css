@@ -11,10 +11,10 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	color: #e7e7e7;
 
-	background: #3023ae;
-	background: -moz-linear-gradient(60deg, #3023ae 0%, #c86dd7 100%);
-	background: -webkit-linear-gradient(60deg, #3023ae 0%, #c86dd7 100%);
-	background: linear-gradient(60deg, #3023ae 0%, #c86dd7 100%);
+	background: #121214;
+	background: -moz-linear-gradient(60deg, #121214 0%, #8257e5 100%);
+	background: -webkit-linear-gradient(60deg, #121214 0%, #8257e5 100%);
+	background: linear-gradient(60deg, #121214 0%, #8257e5 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorsrt='#3023ae', endColor='#c86dd7');
 }
 
@@ -22,7 +22,7 @@ button {
 	padding: 16px 32px;
 	font-size: 1em;
 	background-color: transparent;
-	border: 1px solid rgba(255, 255, 255, .1);
+	border: 1px solid #121214(255, 255, 255, .1);
 	color: #e7e7e7;
 	border-radius: 5px;
 	cursor: pointer;
@@ -120,7 +120,7 @@ button:hover {
 
 .select-options > select {
 	background-color: var(--timer-color);
-	border: 1px solid rgba(255, 255, 255, .1);
+	border: 1px solid #121214(255, 255, 255, .1);
 	border-radius: 5px;
 	cursor: pointer;
 	outline: none;
