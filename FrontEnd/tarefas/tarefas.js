@@ -1,6 +1,3 @@
-if(localStorage.getItem("token") == undefined || localStorage.getItem("token") == null || localStorage.getItem("token") == ""){
-  window.location.href = "/login.html"
-}
 
 
 const modal = document.querySelector('.modal-container')
@@ -14,7 +11,7 @@ const token = localStorage.getItem("token")
 var itens
 var id
 
-if(token != null){
+// if(token != null){
 
 function openModal(item) {
   modal.classList.add('active')
@@ -73,14 +70,17 @@ function openModal(item) {
 }
 
 function openModalEdit(item) {
-  modal.classList.add('active')
 
+
+  modal.classList.add('active')
+  
   if (item) {
 
 
     sNome.value = item.titulo
     sFuncao.value = item.descricao
     sSalario.value = item.minutos
+    statusI = item.concluido
     id = item.id 
     
      modal.onclick = e => {
@@ -95,36 +95,37 @@ function openModalEdit(item) {
   }
 
   btnSalvar.onclick  = async e => {
+    
     e.preventDefault();
     
     if (sNome.value == '' || sFuncao.value == '' || sSalario.value == '') {
       return
     }
-    const payload = { "id": id, "titulo": sNome.value, "descricao": sFuncao.value, "minutos": sSalario.value, "concluido": item.concluido}
-  try{
+    const payload = { "id": id, "titulo": sNome.value, "descricao": sFuncao.value, "minutos": sSalario.value, "concluido": statusI}
+    setItem.minutos(sSalario.value)
+    try{
     const response = await fetch(`http://localhost:8080/tarefas/editar/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
         
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
     });
    
     const data = await response.json();
-    
-      itens.push(data)
-       deleteItem(item.id)
-      
-      setItensBD()
-      loadItens()
-
-      modal.classList.remove('active') 
+    localStorage.removeItem('dbfunc', item)
+    setItensBD()
+    loadItens()
+    modal.classList.remove('active') 
     }catch{
   
     }
+    
 }
 }
+
+
 
 
 async function deleteItem(id, index)  {
@@ -138,10 +139,10 @@ async function deleteItem(id, index)  {
     body:{},
   });
 
-
-    itens.splice(index, 1)
+  itens.splice(index, 1)
     setItensBD()
     loadItens()
+    
 }
 
 async function marcarConcluidoItem(id, index)  {
@@ -241,9 +242,11 @@ const getItensBD = () => JSON.parse(localStorage.getItem('dbfunc')) ?? []
 const setItensBD = () => localStorage.setItem('dbfunc', JSON.stringify(itens))
 
 loadItens()
-} else
-window.location.href = "../login.html";
+
 
 function startTimer(){
-  window.location.href = '..\timer\timer.html';
+  window.location.href = "../timer/timer.html";
  }
+ 
+// } else
+// window.location.href = "../login.html";
