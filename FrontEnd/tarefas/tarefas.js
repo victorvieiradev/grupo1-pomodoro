@@ -131,8 +131,7 @@ async function deleteItem(id, index)  {
   const response = await fetch(`http://localhost:8080/tarefas/${id}`, {
     method: 'DELETE',
     headers: {
-      'Content-Type': 'application/json',
-      
+      'Content-Type': 'application/json'      
     },
     body:{},
   });
