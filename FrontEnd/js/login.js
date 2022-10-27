@@ -21,13 +21,18 @@ fetch('http://localhost:8080/login', {
 }).then(data => {
   const token = data.split(" ")[1]
   localStorage.setItem("token", token)
-  window.location.href = "home.html"
+  if(localStorage.getItem("token") === token){
+    window.location.href = "home.html"
+  }
+  
 })
 }
-
+if(localStorage.getItem("token")){
+  window.location.href = "home.html"
+}
 
 function sair(){
 
   localStorage.removeItem("token")
- 
+  window.location.href = "../login.html"
  }

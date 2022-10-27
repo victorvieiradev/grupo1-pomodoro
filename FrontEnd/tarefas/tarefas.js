@@ -1,3 +1,6 @@
+if(localStorage.getItem("token") == undefined || localStorage.getItem("token") == null || localStorage.getItem("token") == ""){
+  window.location.href = "/login.html"
+}
 const modal = document.querySelector('.modal-container')
 const tbody = document.querySelector('tbody')
 const sNome = document.querySelector('#titulo')
