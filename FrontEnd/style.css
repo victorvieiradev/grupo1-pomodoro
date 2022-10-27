@@ -146,6 +146,7 @@ tbody tr td {
   vertical-align: text-top;
   padding: 6px;
   max-width: 50px;
+  align-content: center;
 }
 
 thead tr th {
@@ -189,6 +190,7 @@ tbody tr td.acao {
   
   td button i {
     font-size: 20px!important;
+    align: center;
   }
 
   td button i:first-child {
