@@ -245,5 +245,5 @@ loadItens()
 window.location.href = "../login.html";
 
 function startTimer(){
-  window.location.href = '..\timer\timer.html';
+  window.location.href = 'timer.html';
  }
