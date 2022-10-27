@@ -27,9 +27,7 @@ fetch('http://localhost:8080/login', {
   
 })
 }
-if(localStorage.getItem("token")){
-  window.location.href = "home.html"
-}
+
 
 function sair(){
 

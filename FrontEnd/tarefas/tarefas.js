@@ -47,7 +47,7 @@ function openModal(item) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + localStorage.getItem("token")
+          
         },
         body: JSON.stringify(payload),
       });
@@ -104,7 +104,7 @@ function openModalEdit(item) {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem("token")
+        
       },
       body: JSON.stringify(payload),
     });
@@ -132,7 +132,7 @@ async function deleteItem(id, index)  {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + localStorage.getItem("token")
+      
     },
     body:{},
   });
@@ -152,7 +152,7 @@ async function marcarConcluidoItem(id, index)  {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-       'Authorization': 'Bearer ' + localStorage.getItem("token")
+       
       },
       body:{},
     })
