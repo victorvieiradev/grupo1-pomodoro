@@ -14,9 +14,17 @@ body {
   display: list-item;
   align-items: center;
   justify-content: center;
-  background-color: #121214;
+ 
     font-family: 'Roboto', sans-serif;
     color: var(--color-white);
+
+    
+	background: #121214;
+	background: -moz-linear-gradient(60deg, #121214 0%, #6c49be 100%);
+	background: -webkit-linear-gradient(60deg, #121214 0%, #6c49be 100%);
+	background: linear-gradient(60deg, #121214 0%, #6c49be 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorsrt='#3023ae', endColor='#c86dd7');
+    
     
 } 
 
@@ -54,22 +62,33 @@ nav#menu ul{
   text-align: center;
   text-decoration: none;
   
+  
 }
+div div button#new  {
+  background: linear-gradient(60deg, #121214 0%, #8257e5 100%);
+  border: 2px solid #8257e5;
+}
+div div button#new :hover {
+  background: linear-gradient(30deg, #847b8a 0%, #593c9c 100%);
+}
+
 
 nav#menu li{
 display: inline-block;
-color: rgb(255, 255, 255);
-background-color:#343a40;
+color: 3023ae;
+background: linear-gradient(30deg, #121214 0%, #8369be 100%);
 padding: 10px;
 margin: 4px;
 border-radius: 500px;
+border: 2.5px solid #8257e5;
+
 
 
 
 }
 
 nav#menu li:hover {
-  background-color:rgb(211, 173, 255);
+  background: linear-gradient(30deg, #2c2630 0%, #593c9c 100%);
 }
 
 nav#menu li a {
@@ -129,19 +148,18 @@ table {
   border-spacing: 10px;
   word-break: break-all;
   border-collapse: collapse;
-  background-color:#343a40;
-  
+  background: linear-gradient(30deg, #2c2630 0%, #593c9c 100%);
 }
 
 thead {
-  background-color:#343a40;
+  background: linear-gradient(30deg, #2c2630 0%, #593c9c 100%);
   border-color: #8257e5;
   
 }
 
 
 tr {
-  border-bottom: 1px solid #8257e5!important;
+  border-bottom: 2px solid #8257e5!important;
 }
 
 tbody tr td {
@@ -313,3 +331,39 @@ td button i:first-child {
   align-items: center;
 }
 
+div#textosHome{
+  margin-left: 5%;
+  margin-top: 20px;
+  
+}
+
+div#textosHome  article h1{
+display: inline-block;
+color: darkgray;
+size: 30px;
+align-self: center;
+margin-left: 50;
+ 
+
+}
+div#textosHome  article{
+  border: 1.5px solid #5f537a;
+  display: block;
+  padding-block: 30px;
+  align-content: center;
+  size: 20px;
+  background: linear-gradient(30deg, #2c2630 0%, #593c9c 100%);
+  border-radius: 35px;
+  padding: 2%;
+  max-width: max-content;
+  color:  darkgray;
+}
+
+body#homeP{
+  
+	background: #121214;
+	background: -moz-linear-gradient(60deg, #121214 0%, #8257e5 100%);
+	background: -webkit-linear-gradient(60deg, #121214 0%, #8257e5 100%);
+	background: linear-gradient(60deg, #121214 0%, #8257e5 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorsrt='#3023ae', endColor='#c86dd7');
+}
