@@ -27,7 +27,7 @@ await fetch('http://localhost:8080/entrar', {
   localStorage.setItem("token", token)
 
   if(localStorage.getItem("token") === 'logado'){
-    window.location.href = "homeU.html"
+    window.location.href = "../homeU.html"
   }
   
 })
