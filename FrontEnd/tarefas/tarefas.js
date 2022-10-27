@@ -106,7 +106,7 @@ function openModalEdit(item) {
         'Content-Type': 'application/json',
         
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(payload)
     });
    
     const data = await response.json();
