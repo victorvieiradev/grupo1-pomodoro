@@ -6,7 +6,7 @@ let token
 btnEntrar.onclick = async e => {
   e.preventDefault();
 
-  
+
   if (email.value == '' || senha.value == '') {
     return
   }
@@ -25,6 +25,7 @@ await fetch('http://localhost:8080/entrar', {
   
   const token = data
   localStorage.setItem("token", token)
+  
   if(localStorage.getItem("token") === 'logado'){
     window.location.href = "home.html"
   }

@@ -11,7 +11,7 @@ const token = localStorage.getItem("token")
 var itens
 var id
 
-// if(token != null){
+ if(token != "logado"){
 
 function openModal(item) {
   modal.classList.add('active')
@@ -248,5 +248,5 @@ function startTimer(){
   window.location.href = "../timer/timer.html";
  }
  
-// } else
-// window.location.href = "../login.html";
+} else
+window.location.href = "../login.html";
