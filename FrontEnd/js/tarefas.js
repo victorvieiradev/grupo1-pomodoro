@@ -248,7 +248,7 @@ loadItens()
 
 
 function startTimer(){
-  window.location.href = "../timerU/timer.html";
+  window.location.href = "timerU/timer.html";
  }
  
 
