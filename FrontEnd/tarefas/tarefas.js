@@ -11,8 +11,11 @@ const token = localStorage.getItem("token")
 var itens
 var id
 
- if(token == "logado"){
+ if(token != 'logado'){
 
+  alert("Você precisa ter acesso")
+  window.location.href = "../login.html";
+}
 function openModal(item) {
   modal.classList.add('active')
 
@@ -248,6 +251,5 @@ function startTimer(){
   window.location.href = "../timer/timer.html";
  }
  
-} else
-alert("Você precisa ter acesso")
-window.location.href = "../login.html";
+
+
