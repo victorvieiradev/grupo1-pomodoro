@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "entrar")
+@RequestMapping(path = "/entrar")
 @CrossOrigin(origins = "*")
 public class LoginController {
     private final UsuarioRepository usuarioRepository;
