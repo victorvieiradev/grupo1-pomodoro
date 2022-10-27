@@ -15,7 +15,9 @@ var id
 
   alert("Você precisa ter acesso")
   window.location.href = "../login.html";
-}
+} else {
+
+
 function openModal(item) {
   modal.classList.add('active')
 
@@ -252,4 +254,4 @@ function startTimer(){
  }
  
 
-
+}
