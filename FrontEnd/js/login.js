@@ -19,6 +19,7 @@ fetch('http://localhost:8080/login', {
 }).then( (response) => {
   return response.text()
 }).then(data => {
+  
   const token = data.split(" ")[1]
   localStorage.setItem("token", token)
   if(localStorage.getItem("token") === token){
