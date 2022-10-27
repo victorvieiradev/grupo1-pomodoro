@@ -136,7 +136,9 @@ table {
 thead {
   background-color:#343a40;
   border-color: #8257e5;
+  
 }
+
 
 tr {
   border-bottom: 1px solid #8257e5!important;
@@ -151,12 +153,13 @@ tbody tr td {
 
 thead tr th {
   padding: 5px;
-  text-align: start;
+  text-align: center;
   margin-bottom: 50px;
 }
 
 tbody tr {
   margin-bottom: 50px;
+  text-align: center;
 }
 
 thead tr th.acao {
@@ -190,11 +193,11 @@ tbody tr td.acao {
   
   td button i {
     font-size: 20px!important;
-    align: center;
+    
   }
 
   td button i:first-child {
-    margin-right: 0;
+    margin-right: 50;
   }
 
   .modal {
@@ -253,6 +256,9 @@ form#formAtiv button{
   width: 100%;
 }
 
+td {
+  text-align: center;
+}
 
 .modal button {
   width: 100%;
@@ -288,19 +294,22 @@ form#formAtiv button{
 }
 
 td button {
-  align-items: center;
+  align-self: center;
   border: none;
   outline: none;
   background-color:transparent;
+
 }
 
 td button i {
   font-size: 25px;
+  box-sizing: 30px;
   
 }
 
 td button i:first-child {
   margin-right: 10px;
   color: #8257e5;
+  align-items: center;
 }
 
