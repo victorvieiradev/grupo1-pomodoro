@@ -3,14 +3,16 @@ const senha = document.querySelector('#senha')
 const btnEntrar = document.querySelector('#btnEntrar')
 let token
 
-btnEntrar.onclick =  e => {
+btnEntrar.onclick = async e => {
   e.preventDefault();
+
+  
   if (email.value == '' || senha.value == '') {
     return
   }
   let data = {"email": email.value, "senha":senha.value}
 
-fetch('http://localhost:8080/login', {
+await fetch('http://localhost:8080/entrar', {
  
   method: 'POST',
   headers: {
@@ -21,9 +23,9 @@ fetch('http://localhost:8080/login', {
   return response.text()
 }).then(data => {
   
-  const token = data.split(" ")[1]
+  const token = data
   localStorage.setItem("token", token)
-  if(localStorage.getItem("token") === token){
+  if(localStorage.getItem("token") === 'logado'){
     window.location.href = "home.html"
   }
   
