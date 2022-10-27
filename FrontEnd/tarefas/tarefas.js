@@ -1,6 +1,8 @@
 if(localStorage.getItem("token") == undefined || localStorage.getItem("token") == null || localStorage.getItem("token") == ""){
   window.location.href = "/login.html"
 }
+
+
 const modal = document.querySelector('.modal-container')
 const tbody = document.querySelector('tbody')
 const sNome = document.querySelector('#titulo')
@@ -220,6 +222,7 @@ function insertItem(item, index) {
   const startItemButton = document.createElement('button');
   const bxStart = document.createElement('i');
   bxStart.className = 'fa-solid fa-play' ;
+  bxStart.setAttribute('onclick', 'startTimer()')
   startItemButton.appendChild(bxStart)
   acaoStart.appendChild(startItemButton)
 
@@ -240,3 +243,7 @@ const setItensBD = () => localStorage.setItem('dbfunc', JSON.stringify(itens))
 loadItens()
 } else
 window.location.href = "../login.html";
+
+function startTimer(){
+  window.location.href = '..\timer\timer.html';
+ }
