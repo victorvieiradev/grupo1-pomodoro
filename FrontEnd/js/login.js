@@ -25,7 +25,7 @@ await fetch('http://localhost:8080/entrar', {
   
   const token = data
   localStorage.setItem("token", token)
-  
+
   if(localStorage.getItem("token") === 'logado'){
     window.location.href = "home.html"
   }
@@ -36,6 +36,6 @@ await fetch('http://localhost:8080/entrar', {
 
 function sair(){
 
-  localStorage.removeItem("token")
+  localStorage.removeItem("token") 
   window.location.href = "../login.html"
  }
