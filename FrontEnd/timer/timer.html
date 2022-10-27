@@ -1,124 +1,77 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pomodoro-Timer</title>
-    
-    <link rel="shortcut icon" href="icons/timer-icon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/responsive.css">
+	<title>Pomodoro</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.css"
+		integrity="sha512-5m1+8f8jC4ePfYvS39HmjqsYkkragJZaXV7kfreb5pytmTlDnZgXZ73JlYC0Ui25beVJMWLJq8AzDv4ZeXC9mg=="
+		crossorigin="anonymous" />
+	<script src="https://kit.fontawesome.com/c42ac314bc.js" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header id="cabecalho">
-        <nav id="menu" >
-            <ul type="disc">
-                <li class="nav-item">
-                    <a class="nav-link active" href="../home.html">Home</a>
-                 </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../login.html">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="timer/timer.html">Timer</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../home.html" onclick = "sair()">Sair</a>
-              </li>
-            </ul>
-      </nav> 
-    </header>
-    <div id="modal-container">
-        <div id="modal-info">
-            <div id="box-modal">
-                <div id="modal-title">
-                    <h1>Como funciona o método Pomodoro?</h1>
-                </div>
-                <div id="description">
-                    <p>
-                        O método Pomodoro é simples e dura duas horas. Primeiro, você realiza uma atividade durante 25 minutos. Quando acabar o tempo, descansa 5 minutos. Assim sucessivamente até que complete as duas horas. Como recompensa, você descansa mais 30 minutos.
-                    </p>
-                    <br>
-                    <p>
-                        <h2 style="margin-bottom: 10px;">Descansos</h2>
-                        Durante o tempo de descanso, é interessante não fazer nada que requeira muito esforço mental. Caso contrário, sua mente não será capaz de reorganizar e integrar o que você aprendeu. Como resultado, você não será capaz de dar ao próximo Pomodoro o seu melhor esforço.
-                        Nesse intervalo, você pode comer, beber um copo d’água, ver televisão, fazer um alongamento, acessar as redes sociais ou apenas relaxar da forma que achar melhor. 
-                    </p>
-                    <br>
-                    <p>
-                        <h2 style="margin-bottom: 10px;">Vantagens de usar a técnica Pomodoro</h2>
-                        <ul>
-                        <li>Alivia a ansiedade;</li>
+	<div class="main">
+		<div class="turns animated slideInDown">1/4</div>
 
-                        <li>Aumenta o foco e a concentração por meio da redução das interrupções;</li>
+		<div class="time-container animated rotateIn">
+			<svg width="200" height="200" class="circle-container">
+				<circle class="background-circle" r="90" cx="100" cy="100" />
+				<circle class="circle" r="90" cx="100" cy="100" />
+			</svg>
+			<div class="time">00:00</div>
+			<div class="config">
+				<i class="fas fa-cog" data-toggle="collapse" data-target="#drop-content"></i>
+				<span class="config-tooltip-text">Configurar</span>
+			</div>
+		</div>
 
-                        <li>Aumenta a conscientização das decisões;</li>
+		<div id="drop-content" class="collapse dropdown-content">
+			<div class="select-options">
+				<label for="work-time-options">Tempo:</label>
+				<select id="work-time-options" name="work-options" onchange="showResetMessage()">
+					<option value="25" selected>25 minutos</option>
+					<option value="35">35 minutos</option>
+					<option value="45">45 minutos</option>
+					<option value="55">55 minutos</option>
+				</select>
+				<label for="total-turns-options">Turnos:</label>
+				<select id="total-turns-options" name="qtde-turns" onchange="showResetMessage()">
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4" selected>4</option>
+					<option value="5">5</option>
+				</select>
+			</div>
+			<div class="config-message">
+				<span>
+					<a href="javascript:reset()">Reinicie</a> para aplicar as modificações
+				</span>
+			</div>
+		</div>
 
-                        <li>Aumenta a motivação e mantém-na constante;</li>
+		<div class="time-mode animated zoomIn">Trabalho</div>
 
-                        <li>Reforça a determinação para atingir os objetivos;</li>
+		<div>
+			<button class="timer-control animated slideInLeft">Iniciar</button>
+			<button class="reset-button animated slideInRight">Reiniciar</button>
+		</div>
+	</div>
 
-                        <li>Melhora o processo de trabalho ou estudo;</li>
+	<audio id="notification">
+		<source src="notification.mp3">
+	</audio>
 
-                        <li>Reforça sua determinação de continuar a aplicar-se em face de complexas situações.</li>
-                        </ul>
-                    </p>
-                </div>
-                <div id="button-modal">
-                    <button id="bt-modal">Ok</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="box-principal">
-        <div id="box-central">      
-            
-            <div id="progress-bar">
-                <div id="progress">
-
-                </div>
-            </div>
-
-            <div id="info">
-                <a href="#" id="info-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#32323a" class="bi bi-info-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-                    </svg>
-                </a>
-            </div>
-
-            <div id="box-cronometro">
-                <div>
-                    <h2 style="cursor:default;" id="contagem">25:00</h2>
-                </div>
-            </div>
-            <div id="buttons">
-                <button onclick="reset()" class="button" id="reset">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="50" fill="#8257e5" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
-                        <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
-                    </svg>
-                </button>
-                <button class="button" id="start">
-                    <svg id="svgStart" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#8257e5" class="bi bi-play-fill" viewBox="0 0 16 16">
-                        <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-                    </svg>
-                </button>
-                <button onclick="stop()" class="button" id="stop">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="50" fill="#8257e5" class="bi bi-pause" viewBox="0 0 16 16">
-                        <path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-    <script src = "js/login.js"> </script>
+	<script src="scripts.js"></script>
 </body>
+
 </html>

@@ -100,4 +100,3 @@ info.addEventListener('click', () => {
 btModal.addEventListener('click', () => {
     containerModal.style.display = 'none'
 })
-

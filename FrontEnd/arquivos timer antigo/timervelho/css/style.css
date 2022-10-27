@@ -193,38 +193,3 @@ body{
     height: 100%;
     transition: all 400ms;
 }
-
-nav#menu {
-    display: block;
-    
-  
-  }
-  
-  nav#menu ul{
-    list-style: none;
-    position: relative;
-    width: auto;
-    text-align: center;
-    text-decoration: none;
-    
-  }
-  
-  nav#menu li{
-  display: inline-block;
-  color: #000;
-  background-color:#343a40;
-  padding: 10px;
-  margin: 4px;
-  border-radius: 500px;
-  
-  }
-  
-  nav#menu li:hover {
-    background-color:rgb(211, 173, 255);
-  }
-  
-  nav#menu li a {
-    color: #8257e5;
-    text-decoration: none;
-  }
-  
