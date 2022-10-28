@@ -7,14 +7,6 @@ const resetButton = document.querySelector('.reset-button');
 const notificationSound = document.querySelector('#notification');
 const timeContainerElement = document.querySelector('.time-container');
 
-
-if(token != 'logado'){
-
-	alert("Você precisa ter acesso")
-	window.location.href = "../login.html";
-  } else{
-
-
 let isRunning,
 	isBreakTime,
 	workTime,
@@ -152,4 +144,3 @@ function showResetMessage() {
 }
 
 reset();
-  }
