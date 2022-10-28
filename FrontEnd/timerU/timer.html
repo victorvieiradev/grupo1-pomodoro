@@ -17,12 +17,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 	<link rel="stylesheet" href="styles.css">
-	<script>
-		const token = localStorage.getItem("token")
-		if(token != 'logado'){
-			window.location.href = "../login.html"
-		} 
-	  </script>
 </head>
 
 <body>
@@ -41,7 +35,7 @@
 				<a class="nav-link active" aria-current="page" href="timer.html">Timer</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link active" aria-current="page" href="#" onclick = "sair()">Sair</a>
+				<a class="nav-link active" aria-current="page" href="../home.html" onclick = "sair()">Sair</a>
 			  </li>
 			</ul>
 	  </nav> 
@@ -102,15 +96,7 @@
 		<source src="notification.mp3">
 	</audio>
 
-	
-	<script>
-		function sair(){
-
-localStorage.removeItem("token") 
-window.location.href = "login.html"
-}
-	</script>
-	
+	<script src="scripts.js"></script>
 </body>
 
 </html>
