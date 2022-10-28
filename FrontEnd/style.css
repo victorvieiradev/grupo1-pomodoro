@@ -334,13 +334,14 @@ td button i:first-child {
 }
 
 div#textosHome{
-  margin-left: 5%;
+ 
   margin-top: 20px;
+  display: block;
   
 }
 
 div#textosHome  article h1{
-display: inline-block;
+display: block;
 color: darkgray;
 size: 30px;
 align-self: center;
@@ -349,6 +350,7 @@ margin-left: 50;
 
 }
 div#textosHome  article{
+  margin-left: 20%;
   border: 1.5px solid #5f537a;
   display: block;
   padding-block: 30px;
@@ -368,18 +370,20 @@ body#homeP{
 	background: -webkit-linear-gradient(60deg, #121214 0%, #8257e5 100%);
 	background: linear-gradient(60deg, #121214 0%, #8257e5 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorsrt='#3023ae', endColor='#c86dd7');
+  
 }
 
-/* _________________________________________________2_____________________________________________ */
+/* _________________________________________________2_____________________________________________
 
 div#textosHome2{
   margin-left: 25%;
-  margin-top: 20px;
+  margin-top: 10px;
+  
   
 }
 
 div#textosHome2  article h1{
-display: inline-block;
+
 color: darkgray;
 size: 30px;
 align-self: center;
@@ -398,5 +402,5 @@ div#textosHome2  article{
   padding: 2%;
   max-width: max-content;
   color:  darkgray;
-}
+} */
 
