@@ -37,5 +37,5 @@ await fetch('http://localhost:8080/entrar', {
 function sair(){
 
   localStorage.removeItem("token") 
-  window.location.href = "home.html"
+  window.location.href = "login.html"
  }

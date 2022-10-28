@@ -65,6 +65,12 @@ if(token !== 'logado'){
 </div>
 
 
-<script src = "js/login.js"> </script>
+<script>
+  function sair(){
+
+localStorage.removeItem("token") 
+window.location.href = "login.html"
+}
+</script>
 </body>
 </html>
