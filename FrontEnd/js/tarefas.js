@@ -6,18 +6,10 @@ const sNome = document.querySelector('#titulo')
 const sFuncao = document.querySelector('#descricao')
 const sSalario = document.querySelector('#minutos')
 const btnSalvar = document.querySelector('#btnSalvar')
-const token = localStorage.getItem("token")
+
 
 var itens
-var id
-
- if(token != 'logado'){
-
-  alert("Você precisa ter acesso")
-  window.location.href = "../login.html";
-} else {
-
-
+var id 
 function openModal(item) {
   modal.classList.add('active')
 
@@ -254,4 +246,3 @@ function startTimer(){
  }
  
 
-}

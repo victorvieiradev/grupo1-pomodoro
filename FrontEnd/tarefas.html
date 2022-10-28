@@ -7,7 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home - MyTasks</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/1f43f2345d.js" crossorigin="anonymous"></script>
+  <script>
+    const token = localStorage.getItem("token")
+if(token != 'logado'){
+
+  alert("Você precisa ter acesso")
+  window.location.href = "login.html"
+} 
+  </script>
 
 </head>
 
