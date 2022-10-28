@@ -1,7 +1,7 @@
 const email = document.querySelector('#email')
 const senha = document.querySelector('#senha')
 const btnEntrar = document.querySelector('#btnEntrar')
-let token
+
 
 btnEntrar.onclick = async e => {
   e.preventDefault();
@@ -23,8 +23,8 @@ await fetch('http://localhost:8080/entrar', {
   return response.text()
 }).then(data => {
   
-  const token = data
-  localStorage.setItem("token", token)
+  
+  localStorage.setItem("token", data)
 
   if(localStorage.getItem("token") === 'logado'){
     window.location.href = "homeU.html"
@@ -32,10 +32,3 @@ await fetch('http://localhost:8080/entrar', {
   
 })
 }
-
-
-function sair(){
-
-  localStorage.removeItem("token") 
-  window.location.href = "login.html"
- }
