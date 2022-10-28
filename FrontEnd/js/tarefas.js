@@ -81,7 +81,7 @@ function openModalEdit(item) {
     id = item.id 
     
      modal.onclick = e => {
-      if (e.target.className.indexOf('modal-container') !== 5) {
+      if (e.target.className.indexOf('modal-container') !== -1) {
         modal.classList.remove('active')
       }
     }
