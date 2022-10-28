@@ -7,6 +7,7 @@ const resetButton = document.querySelector('.reset-button');
 const notificationSound = document.querySelector('#notification');
 const timeContainerElement = document.querySelector('.time-container');
 
+
 let isRunning,
 	isBreakTime,
 	workTime,
@@ -24,14 +25,15 @@ resetButton.addEventListener('click', reset);
 Notification.requestPermission();
 
 function startValues() {
-	let workTimeElement = document.querySelector('#work-time-options');
+	let workTimeElement = JSON.parse(localStorage.getItem("tempo"));
 	let totalTurnsElement = document.querySelector('#total-turns-options');
+console.log(workTimeElement)
 
 	isRunning = false;
 	isBreakTime = false;
-	workTime = (workTimeElement.options[workTimeElement.selectedIndex].value) * 60;
-	breakTime = ((workTimeElement.options[workTimeElement.selectedIndex].value) / 5) * 60;
-	longBreakTime = ((workTimeElement.options[workTimeElement.selectedIndex].value) - 10) * 60;
+	workTime = workTimeElement * 60;
+	breakTime = (workTimeElement / 5) * 60;
+	longBreakTime = (workTimeElement - 10) * 60;
 	totalTurns = totalTurnsElement.options[totalTurnsElement.selectedIndex].value;
 	currentTurn = 1;
 	totalTime = workTime;
