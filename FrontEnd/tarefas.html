@@ -68,12 +68,21 @@ if(token != 'logado'){
         <form id="formAtiv">
           <label for="titulo">Título</label>
           <input id="titulo" type="text" required />
-  
+
           <label for="descricao">Descrição</label>
           <input id="descricao" type="text" required />
   
           <label for="minutos">Tempo em minutos</label>
-          <input id="minutos" type= "number" step="5" min="5" max="55" required />
+          <select name="selecaoMinutos" id="minutos">
+					<option value="5">5 minutos</option>
+					<option value="15">15 minutos</option>
+          <option value="35">25 minutos</option>
+					<option value="35">35 minutos</option>
+					<option value="45">45 minutos</option>
+					<option value="55">55 minutos</option>
+				</select>
+            
+
           <button id="btnSalvar">Salvar</button>
         </form>
       </div>
