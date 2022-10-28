@@ -369,3 +369,34 @@ body#homeP{
 	background: linear-gradient(60deg, #121214 0%, #8257e5 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorsrt='#3023ae', endColor='#c86dd7');
 }
+
+/* _________________________________________________2_____________________________________________ */
+
+div#textosHome2{
+  margin-left: 25%;
+  margin-top: 20px;
+  
+}
+
+div#textosHome2  article h1{
+display: inline-block;
+color: darkgray;
+size: 30px;
+align-self: center;
+margin-left: 50;
+ 
+
+}
+div#textosHome2  article{
+  border: 1.5px solid #5f537a;
+  display: block;
+  padding-block: 30px;
+  align-content: center;
+  size: 20px;
+  background: linear-gradient(30deg, #2c2630 0%, #593c9c 100%);
+  border-radius: 35px;
+  padding: 2%;
+  max-width: max-content;
+  color:  darkgray;
+}
+

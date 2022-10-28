@@ -95,11 +95,12 @@ function openModalEdit(item) {
     
     e.preventDefault();
     
+    console.log(itens)
     if (sNome.value == '' || sFuncao.value == '' || sSalario.value == '') {
       return
     }
     const payload = { "id": id, "titulo": sNome.value, "descricao": sFuncao.value, "minutos": sSalario.value, "concluido": statusI}
-    setItem.minutos(sSalario.value)
+    
     try{
     const response = await fetch(`http://localhost:8080/tarefas/editar/${id}`, {
       method: 'PUT',
@@ -111,16 +112,23 @@ function openModalEdit(item) {
     });
    
     const data = await response.json();
-    localStorage.removeItem('dbfunc', item)
+
+    const findItem = itens.findIndex(item => item.id === data.id);
+    
+
+    console.log(itens[findItem]);
+    itens[findItem] = data;
+    console.log(itens)
+    
     setItensBD()
     loadItens()
     modal.classList.remove('active') 
-    }catch{
+   }catch{
   
     }
     
-}
-}
+  
+  }}
 
 
 
