@@ -37,7 +37,7 @@ function openModal(item) {
       if (sNome.value == '' || sFuncao.value == '' || sSalario.value == '') {
         return
       }
-      const payload = {"titulo": sNome.value, "descricao": sFuncao.value, "minutos": sSalario.value}
+      const payload = {"titulo": sNome.value, "descricao": sFuncao.value, "minutos": sSalario.value, "usuario": {"cpf": localStorage.getItem("userCpf")}}
     try{
       const response = await fetch('http://localhost:8080/tarefas', {
         method: 'POST',

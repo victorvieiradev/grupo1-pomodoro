@@ -10,7 +10,7 @@ btnEntrar.onclick = async e => {
   if (email.value == '' || senha.value == '') {
     return
   }
-  let data = {"email": email.value, "senha":senha.value}
+  let payload = {"email": email.value, "senha":senha.value}
 
 await fetch('http://localhost:8080/entrar', {
  
@@ -18,14 +18,14 @@ await fetch('http://localhost:8080/entrar', {
   headers: {
     'Content-Type': 'application/json'
   },
-  body: JSON.stringify(data),
+  body: JSON.stringify(payload),
 }).then( (response) => {
   return response.text()
 }).then(data => {
   
   
-  localStorage.setItem("token", data)
-
+  localStorage.setItem("token", data.split(" ")[0])
+  localStorage.setItem("userCpf", data.split(" ")[1])
    
   
   

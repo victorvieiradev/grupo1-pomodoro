@@ -29,7 +29,7 @@ public class LoginController {
         if (!usuarioModel.getSenha().equals(usuarioModelOptional.get().getSenha())){
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Senha inválida");
         }
-        return ResponseEntity.status(HttpStatus.OK).body("logado");
+        return ResponseEntity.status(HttpStatus.OK).body("logado "+ usuarioModelOptional.get().getCpf());
     }
 
 }

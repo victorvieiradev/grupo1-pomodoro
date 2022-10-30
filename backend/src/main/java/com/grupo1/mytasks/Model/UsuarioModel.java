@@ -1,10 +1,12 @@
 package com.grupo1.mytasks.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -28,4 +30,7 @@ public class UsuarioModel implements Serializable {
     @Column(nullable = false)
     private String senha;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "usuario", cascade=CascadeType.ALL)
+    private List<TarefaModel> tarefas;
 }
