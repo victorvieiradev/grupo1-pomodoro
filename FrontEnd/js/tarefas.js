@@ -248,12 +248,13 @@ async function getItensDB(){
 
   payload = localStorage.getItem("userCpf")
 
-  const response = await fetch(`http://localhost:8080/tarefas/${payload}`, {
+  const response = await fetch(`http://localhost:8080/tarefas`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
         
       },
+
     });
    
     const data = await response.json();
