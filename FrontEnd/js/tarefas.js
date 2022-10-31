@@ -244,25 +244,24 @@ function insertItem(item, index) {
   tbody.appendChild(tr)
 }
 
-// async function getItensDB(){
+async function getItensDB(){
 
-//   payload = localStorage.getItem("userCpf")
+  payload = localStorage.getItem("userCpf")
 
-//   const response = await fetch(`http://localhost:8080/tarefas`, {
-//       method: 'GET',
-//       headers: {
-//         'Content-Type': 'application/json',
+  const response = await fetch(`http://localhost:8080/tarefas/${payload}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
         
-//       },
-//       body: JSON.stringify(payload),
-//     });
+      },
+    });
    
-//     const data = await response.json();
+    const data = await response.json();
 
-//     localStorage.setItem('dbfunc', JSON.stringify(data))
+    localStorage.setItem('dbfunc', JSON.stringify(data))
 
 
-// }
+}
 
 //FAZER FUNÇÃO GET COM DATABASE PARA MOSTRAR NA TELA
 
@@ -271,7 +270,7 @@ const setItensBD = () => localStorage.setItem('dbfunc', JSON.stringify(itens))
 
 
 loadItens()
-// getItensBD()
+getItensBD()
 
 function startTimer(minutos){
   localStorage.setItem('tempo', JSON.stringify(minutos))

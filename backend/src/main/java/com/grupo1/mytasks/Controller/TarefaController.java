@@ -15,8 +15,11 @@ import java.util.Optional;
 @RequestMapping(path = "/tarefas")
 @CrossOrigin(origins = "*")
 public class TarefaController extends ExceptionHandlerTarefas {
-    private  TarefaService tarefaService;
+    private final TarefaService tarefaService;
 
+    public TarefaController(TarefaService tarefaService) {
+        this.tarefaService = tarefaService;
+    }
     @PostMapping
     public ResponseEntity<TarefaModel> salvarTarefa(@RequestBody TarefaModel tarefa ){
         return ResponseEntity.status(HttpStatus.CREATED).body(tarefaService.salvarTarefa(tarefa));
@@ -27,7 +30,7 @@ public class TarefaController extends ExceptionHandlerTarefas {
     @GetMapping
     public ResponseEntity<List<TarefaModel>> exibirTarefas(String cpf){
 
-        return ResponseEntity.status(HttpStatus.OK).body(tarefaService.exibirTarefas(cpf));
+        return ResponseEntity.status(HttpStatus.OK).body(tarefaService.exibirTarefas());
     }
 
 
@@ -38,6 +41,11 @@ public class TarefaController extends ExceptionHandlerTarefas {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Tarefa não encontrada");
         }
         return ResponseEntity.ok(tarefaModelOptional.get());
+    }
+
+    @GetMapping(path = "/usuario/{usuario}")
+    public ResponseEntity <?> exibirTarefaPorUsuario(@PathVariable String usuario){
+       return ResponseEntity.ok(tarefaService.exibirTarefasPorUsuario(usuario));
     }
 
 

@@ -19,12 +19,16 @@ public class TarefaService {
     public TarefaModel salvarTarefa(TarefaModel tarefa ){
         return tarefaRepository.save(tarefa);
     }
-    public List<TarefaModel> exibirTarefas(String cpf){
+    public List<TarefaModel> exibirTarefas(){
         return tarefaRepository.findAll();
     }
 
     public Optional<TarefaModel> exibirTarefaPorId(Long id){
         return tarefaRepository.findById(id);
+    }
+
+    public List<TarefaModel> exibirTarefasPorUsuario(String usuario){
+        return tarefaRepository.findByUsuario(usuario);
     }
     public void excluirTarefa(TarefaModel tarefaModel ){
         tarefaRepository.delete(tarefaModel);

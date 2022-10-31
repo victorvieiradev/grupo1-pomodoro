@@ -27,6 +27,6 @@ public class TarefaModel implements Serializable {
     private boolean concluido = false;
 
     @ManyToOne
-    @JoinColumn(name="usuario", referencedColumnName = "cpf")//Varios endereços um cliente
+    @JoinColumn(name="usuario", referencedColumnName = "cpf")
     private UsuarioModel usuario;
 }
