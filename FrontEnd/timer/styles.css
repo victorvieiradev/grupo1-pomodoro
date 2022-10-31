@@ -1,4 +1,3 @@
-
 nav#menu {
 	display: block;
   
@@ -16,6 +15,7 @@ nav#menu {
   div div button#new  {
 	background: linear-gradient(60deg, #121214 0%, #8257e5 100%);
 	border: 2px solid #8257e5;
+	size-adjust: 15px;
   }
   div div button#new :hover {
 	background: linear-gradient(30deg, #847b8a 0%, #593c9c 100%);
@@ -28,9 +28,8 @@ nav#menu {
   background: linear-gradient(30deg, #121214 0%, #8369be 100%);
   padding: 10px;
   margin: 4px;
-  border-radius: 500px;
+  border-radius: 5000px;
   border: 2.5px solid #8257e5;
-  
   
   
   
@@ -45,37 +44,7 @@ nav#menu {
 	text-decoration: none;
 	border-radius: 15px;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 
 :root {
 	--timer-color: #887bd3;
@@ -84,10 +53,6 @@ nav#menu {
 html, body {
 	height: 100%;
 }
-
-
-
-
 
 
 

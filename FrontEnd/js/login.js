@@ -34,6 +34,7 @@ await fetch('http://localhost:8080/entrar', {
 }
 
 
+
 function sair(){
   localStorage.clear()
 }
