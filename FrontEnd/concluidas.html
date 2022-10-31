@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarefas concluidas </title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/1f43f2345d.js" crossorigin="anonymous"></script>
+  <script>
+    const token = localStorage.getItem("token")
+if(token != 'logado'){
+
+  alert("Você precisa ter acesso")
+  window.location.href = "login.html"
+} 
+  </script>
+
+</head>
+
+<body>
+  <header id="cabecalho">
+    <nav id="menu" >
+        <ul type="disc">
+          <li class="nav-item">
+            <a class="nav-link active" href="homeU.html">&nbsp&nbspHome&nbsp </a>
+         </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="tarefas.html">Tarefas</a>
+            </li>          
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="timer/timer.html">&nbspTimer&nbsp</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="home.html" onclick = "sair()">&nbsp&nbsp&nbspSair&nbsp&nbsp&nbsp</a>
+          </li>
+ </ul> </nav> 
+</header>
+  <div class="container">
+    <div class="header">
+      <span>Lista de tarefas concluídas</span>
+      <button onclick="" id="new">Exibir tarefas concluídas</i></button>
+    </div>
+
+    <div id="tableItens" class="divTable">
+      <table>
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Descrição</th>
+            <th>Tempo em minutos</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+
+
+    
+    
+  </div>
+  <script src="js/tarefas.js"></script>
+  <script src = "js/login.js"> </script>
+</body>
+</html>
