@@ -121,7 +121,7 @@ function drawTime() {
 }
 
 function drawTurn() {
-	let timeMode = 'Trabalho';
+	let timeMode = 'MyTasks';
 	if (isBreakTime) {
 		timeMode = currentTurn < totalTurns ? 'Descanso' : 'Descanso Longo';
 	}
