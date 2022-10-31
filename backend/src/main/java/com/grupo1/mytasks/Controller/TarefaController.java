@@ -8,17 +8,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/tarefas")
 @CrossOrigin(origins = "*")
 public class TarefaController extends ExceptionHandlerTarefas {
-    private final TarefaService tarefaService;
+    private  TarefaService tarefaService;
 
-    public TarefaController(TarefaService tarefaService) {
-        this.tarefaService = tarefaService;
-    }
     @PostMapping
     public ResponseEntity<TarefaModel> salvarTarefa(@RequestBody TarefaModel tarefa ){
         return ResponseEntity.status(HttpStatus.CREATED).body(tarefaService.salvarTarefa(tarefa));
@@ -27,7 +25,7 @@ public class TarefaController extends ExceptionHandlerTarefas {
 
 
     @GetMapping
-    public ResponseEntity<Optional<TarefaModel>> exibirTarefas(String cpf){
+    public ResponseEntity<List<TarefaModel>> exibirTarefas(String cpf){
 
         return ResponseEntity.status(HttpStatus.OK).body(tarefaService.exibirTarefas(cpf));
     }

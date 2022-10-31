@@ -9,6 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface TarefaRepository extends JpaRepository<TarefaModel, Long> {
-    Optional<TarefaModel> findByCpf(String cpf);
+//    Optional<TarefaModel> findByCpf(String cpf);
 
 }

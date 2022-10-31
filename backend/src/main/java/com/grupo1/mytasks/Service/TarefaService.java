@@ -5,6 +5,7 @@ import com.grupo1.mytasks.Repository.TarefaRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -18,8 +19,8 @@ public class TarefaService {
     public TarefaModel salvarTarefa(TarefaModel tarefa ){
         return tarefaRepository.save(tarefa);
     }
-    public Optional<TarefaModel> exibirTarefas(String cpf){
-        return tarefaRepository.findByCpf(cpf);
+    public List<TarefaModel> exibirTarefas(String cpf){
+        return tarefaRepository.findAll();
     }
 
     public Optional<TarefaModel> exibirTarefaPorId(Long id){
