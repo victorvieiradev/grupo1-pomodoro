@@ -246,7 +246,6 @@ function insertItem(item, index) {
 
 async function getItensDB(){
 
-  payload = localStorage.getItem("userCpf")
 
   const response = await fetch(`http://localhost:8080/tarefas`, {
       method: 'GET',
@@ -254,12 +253,11 @@ async function getItensDB(){
         'Content-Type': 'application/json',
         
       },
-      body: JSON.stringify(payload),
     });
    
     const data = await response.json();
 
-    localStorage.setItem('dbfunc', JSON.stringify(data))
+//    localStorage.setItem('dbfunc', JSON.stringify(data))
 
 
 }
