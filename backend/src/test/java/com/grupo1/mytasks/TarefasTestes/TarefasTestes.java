@@ -12,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.util.List;
+import java.util.Optional;
 
 @SpringBootTest
 public class TarefasTestes extends ExceptionHandlerTarefas {
@@ -20,11 +21,12 @@ public class TarefasTestes extends ExceptionHandlerTarefas {
     public TarefaRepository tarefaRepository;
 
     @Mock
-    private TarefaService tarefaService;  @Test public void testInstance() {
-        List<TarefaModel> todos = tarefaService.exibirTarefas();
-        Assertions.assertThat(todos.listIterator());
-        //teste para verificar se retorna uma lista de tarefas
-    }
+//    private TarefaService tarefaService;  @Test public void testInstance() {
+//        String cpf = 54612854655;
+//        Optional<TarefaModel> todos = tarefaService.exibirTarefas(cpf);
+//        Assertions.assertThat(todos.listIterator());
+//        //teste para verificar se retorna uma lista de tarefas
+//    }
     private TarefaModel tarefaModel; @Test public  void testeCadastroTarefa() {
         Mockito.when(tarefaRepository.existsById (Mockito.anyLong ())).thenReturn (true);
         tarefaRepository.save (tarefaModel);

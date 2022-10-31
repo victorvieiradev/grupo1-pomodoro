@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -28,8 +27,9 @@ public class TarefaController extends ExceptionHandlerTarefas {
 
 
     @GetMapping
-    public ResponseEntity<List<TarefaModel>> exibirTarefas(){
-        return ResponseEntity.status(HttpStatus.OK).body(tarefaService.exibirTarefas());
+    public ResponseEntity<Optional<TarefaModel>> exibirTarefas(String cpf){
+
+        return ResponseEntity.status(HttpStatus.OK).body(tarefaService.exibirTarefas(cpf));
     }
 
 
