@@ -21,6 +21,19 @@ Ao entrar na API, o usuário será redirecionado para a página de Login. Caso e
  A tarefa que o usuário acabou de inlcuir irá contar com 4 botões. **Editar, Concluir, Excluir e Iniciar**. Caso aperte Editar ele irá poder mudar o que quiser dentro da tarefa. Concluir a tarefa será conclúida. Excluir ela irá ser excluida e se clicar em iniciar, o usuário será redirecionado para o timer que já estára com o tempo que o usuário selecinou. Dentro desse timer o usuário poderá escolher em quantos turnos ele deseja conclur.
  Quando o timer for aberto um pop-up será aberto pedindo para que o usuário permita ou não que notificações sejam enviadas para ele. Quando o tempo do primeiro turno (ou o único turno) que o usuário escolher acabar, um som irá disparar para  avisar. Ao final do tempo o usuário pode ir até a aba de atarefas e marcar  a tarefa como concluida. Caso o usuário troque a quantidade de turnos que irá usar, precisará apertar o botão reiniciar dentro do timer. Quando o usuário terminar tudo que quiser, ele poderá utilizar o botão **Sair** para dar fim ao uso da API.
 
+**Como podem entrar em contato com a gente? através do nosso linkedin que está abaixo.
+Nos encontre através do nosso Linkedin
+Victor: https://www.linkedin.com/in/victor-vieira-pcd-a75480238
+Persidh: https://www.linkedin.com/in/persidh-souza-08998216a
+Matheus: https://www.linkedin.com/in/matheus-rocha-664000222
+
+
+**Quem somos nós?**
+
+Victor, Persidh e Matheus são desenvolvedores em
+formação pela da 4ª turma do programa de formação
+Catalisa da Zup Innovation.
+
 
 
 
