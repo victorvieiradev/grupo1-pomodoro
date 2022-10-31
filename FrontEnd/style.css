@@ -21,6 +21,10 @@ body {
     color: var(--color-white);
 
     
+  max-width: 100%;
+
+    
+
 	background: #121214;
 	background: -moz-linear-gradient(60deg, #121214 0%, #6c49be 100%);
 	background: -webkit-linear-gradient(60deg, #121214 0%, #6c49be 100%);
@@ -69,6 +73,7 @@ nav#menu ul{
 div div button#new  {
   background: linear-gradient(60deg, #121214 0%, #8257e5 100%);
   border: 2px solid #8257e5;
+  size-adjust: 15px;
 }
 div div button#new :hover {
   background: linear-gradient(30deg, #847b8a 0%, #593c9c 100%);
@@ -81,7 +86,7 @@ color: 3023ae;
 background: linear-gradient(30deg, #121214 0%, #8369be 100%);
 padding: 10px;
 margin: 4px;
-border-radius: 500px;
+border-radius: 5000px;
 border: 2.5px solid #8257e5;
 
 
@@ -129,7 +134,7 @@ nav#menu li a {
 
 .divTable {
   padding: 10px;
-  width: auto; 
+  width: inherit; 
   height:inherit; 
   overflow:auto;
   color: #beb8b8;
@@ -350,7 +355,7 @@ margin-left: 50;
 
 }
 div#textosHome  article{
-  margin-left: 20%;
+  margin-left: 2%;
   border: 1.5px solid #5f537a;
   display: block;
   padding-block: 30px;
@@ -373,12 +378,18 @@ body#homeP{
   
 }
 
-/* _________________________________________________2_____________________________________________
+/* _________________________________________________2_____________________________________________*/
 
 div#textosHome2{
-  margin-left: 25%;
-  margin-top: 10px;
+  margin-left: 40%;
+  margin-bottom: 40px;
+  float: inline-end;
   
+  justify-content: space-between;
+  display: block;
+color: darkgray;
+size: 30px;
+
   
 }
 
@@ -402,5 +413,5 @@ div#textosHome2  article{
   padding: 2%;
   max-width: max-content;
   color:  darkgray;
-} */
+} 
 
