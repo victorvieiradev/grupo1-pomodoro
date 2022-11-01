@@ -256,8 +256,8 @@ async function getItensDB(){
     });
    
     const data = await response.json();
-
-//    localStorage.setItem('dbfunc', JSON.stringify(data))
+    const data2 = data.filter((item) => item.cpf === payload); 
+    localStorage.setItem('dbfunc', JSON.stringify(data2))
 
 
 }
@@ -270,6 +270,7 @@ const setItensBD = () => localStorage.setItem('dbfunc', JSON.stringify(itens))
 
 loadItens()
 getItensBD()
+getItensDB()
 
 function startTimer(minutos){
   localStorage.setItem('tempo', JSON.stringify(minutos))

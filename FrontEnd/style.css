@@ -58,9 +58,16 @@ border-radius: 500px;
 /* .......................................................NAVBAR..................................................................................... */
 nav#menu {
   display: block;
+  background-color: #000000;
+  height: max-content;
+  
 
 }
-
+ .imagem {
+    background-image: url(.../Logotipo.png); /* Insere a imagem */
+    width: 150px;/* Faz a largura ficar igual a da largura da imagem de exemplo */
+    height: 150px;/* Faz a altura ficar igual a da altura da imagem de exemplo */
+    }
 nav#menu ul{
   list-style: none;
   position: relative;
@@ -88,6 +95,7 @@ padding: 10px;
 margin: 4px;
 border-radius: 5000px;
 border: 2.5px solid #8257e5;
+block-size: 15px, 15px;
 
 
 
