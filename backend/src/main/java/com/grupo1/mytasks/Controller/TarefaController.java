@@ -28,7 +28,7 @@ public class TarefaController extends ExceptionHandlerTarefas {
 
 
     @GetMapping
-    public ResponseEntity<List<TarefaModel>> exibirTarefas(String cpf){
+    public ResponseEntity<List<TarefaModel>> exibirTarefas(){
 
         return ResponseEntity.status(HttpStatus.OK).body(tarefaService.exibirTarefas());
     }
@@ -43,10 +43,6 @@ public class TarefaController extends ExceptionHandlerTarefas {
         return ResponseEntity.ok(tarefaModelOptional.get());
     }
 
-    @GetMapping(path = "/usuario/{usuario}")
-    public ResponseEntity <?> exibirTarefaPorUsuario(@PathVariable String usuario){
-       return ResponseEntity.ok(tarefaService.exibirTarefasPorUsuario(usuario));
-    }
 
 
     @DeleteMapping(path = "/{id}")

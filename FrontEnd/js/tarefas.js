@@ -10,6 +10,7 @@ const btnSalvar = document.querySelector('#btnSalvar')
 
 var itens
 var id 
+
 function openModal(item) {
   modal.classList.add('active')
 
@@ -130,9 +131,6 @@ function openModalEdit(item) {
   
   }}
 
-
-
-
 async function deleteItem(id, index)  {
   
 
@@ -181,8 +179,6 @@ function loadItens() {
   })
 
 }
-
-
 
 function insertItem(item, index) {
   let tr = document.createElement('tr')
@@ -246,18 +242,20 @@ function insertItem(item, index) {
 
 async function getItensDB(){
 
+ let payload = localStorage.getItem("userCpf")
 
   const response = await fetch(`http://localhost:8080/tarefas`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
         
-      },
+      }
     });
    
     const data = await response.json();
-    const data2 = data.filter((item) => item.cpf === payload); 
-    localStorage.setItem('dbfunc', JSON.stringify(data2))
+    const data2 = data.filter((item) => item.usuario.cpf === payload); 
+    console.log(data2)
+    localStorage.setItem('dbfunc', JSON.stringify(data))
 
 
 }
@@ -267,10 +265,10 @@ async function getItensDB(){
 const getItensBD = () => JSON.parse(localStorage.getItem('dbfunc')) ?? []
 const setItensBD = () => localStorage.setItem('dbfunc', JSON.stringify(itens))
 
-
+getItensDB()
 loadItens()
 getItensBD()
-getItensDB()
+
 
 function startTimer(minutos){
   localStorage.setItem('tempo', JSON.stringify(minutos))

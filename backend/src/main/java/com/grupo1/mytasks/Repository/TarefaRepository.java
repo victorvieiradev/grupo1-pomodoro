@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface TarefaRepository extends JpaRepository<TarefaModel, Long> {
-    List<TarefaModel> findByUsuario(String usuario);
+
 }

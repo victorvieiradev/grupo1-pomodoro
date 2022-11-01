@@ -349,18 +349,17 @@ td button i:first-child {
 }
 
 div#textosHome{
- 
-  margin-top: 20px;
   margin-left: 12%;
-align-content: center;
+  align-content: center;
+
 }
 
 div#textosHome  article h1{
 display: block;
 color: darkgray;
-size: 30px;
-align-self: center;
-margin-left: 50;
+
+
+
  
 
 }
@@ -376,7 +375,7 @@ div#textosHome  article{
   padding: 6%;
   max-width: max-content;
   color:  darkgray;
-  float: left;
+  float: inline-start;
   break-inside: avoid;
 }
 
@@ -389,15 +388,10 @@ body#homeP{
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorsrt='#3023ae', endColor='#c86dd7');
   
 }
-
 /* _________________________________________________2_____________________________________________*/
-
 div#textosHome2{
   margin-left: 1%;
-  float: inline-end;
-   margin-top: 20px;
-   display: flex;
-  
+  margin-right: 12%;
 }
 
 div#textosHome2  article h1{
@@ -405,20 +399,20 @@ div#textosHome2  article h1{
 color: darkgray;
 size: 30px;
 align-self: center;
-margin-left: 50;
+
+
  
 
 }
 div#textosHome2  article{
   border: 1.5px solid #5f537a;
-  margin-right: 12%;
   display: block;
   padding-block: 30px;
-  align-content: center;
+
   size: 20px;
   background: linear-gradient(30deg, #2c2630 0%, #593c9c 100%);
   border-radius: 35px;
-  padding: 10%;
+  padding: 6%;
   max-width: max-content;
   color:  darkgray;
   float: inline-end;
@@ -427,10 +421,13 @@ div#textosHome2  article{
 } 
 
 div#txt {
-  column-width: 80%;
+  
+  margin-top: 20px;
   column-count: 2;
   column-gap: initial;
   column-rule: 140px ;
    
   
 }
+/* __________________________________________________________________________________________________________________________ */
+
