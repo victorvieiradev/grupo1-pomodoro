@@ -1,8 +1,10 @@
 nav#menu {
 	display: block;
+	background-color: #000000;
+	height:70px;
+	}
   
-  }
-  
+
   nav#menu ul{
 	list-style: none;
 	position: relative;
@@ -25,25 +27,37 @@ nav#menu {
   nav#menu li{
   display: inline-block;
   color: 3023ae;
-  background: linear-gradient(30deg, #121214 0%, #8369be 100%);
+  background: transparent;
   padding: 10px;
   margin: 4px;
-  border-radius: 5000px;
-  border: 2.5px solid #8257e5;
-  
-  
+
+  height: 65px;
+  width: 120px;
+
   
   }
   
-  nav#menu li:hover {
-	background: linear-gradient(30deg, #2c2630 0%, #593c9c 100%);
-  }
-  
+
   nav#menu li a {
 	color: #beb8b8;
-	text-decoration: none;
-	border-radius: 15px;
+
+	font-size: 25px;
+	border-bottom-style: solid;
+	padding: 0;
   }
+  
+  
+  nav#menu li a:hover {
+  
+	color: #f3f3f3;
+	text-decoration: dashed,  #593c9c;
+	font-size: 25px;
+	border-bottom-style: solid;
+  
+  }
+
+
+
   
 
 :root {
@@ -59,10 +73,14 @@ html, body {
 
 
 body {
-	margin: 0;
+	
+	display: list-item;
+	align-items: center;
+
+
 	font-family: Arial, Helvetica, sans-serif;
 	color: #e7e7e7;
-
+	max-width: 100%;
 	background: #121214;
 	background: -moz-linear-gradient(60deg, #121214 0%, #8257e5 100%);
 	background: -webkit-linear-gradient(60deg, #121214 0%, #8257e5 100%);
@@ -74,7 +92,7 @@ button {
 	padding: 16px 32px;
 	font-size: 1em;
 	background-color: transparent;
-	border: 1px solid #121214(255, 255, 255, .1);
+	border: 1px solidvar(--timer-color)(255, 255, 255, .1);
 	color: #e7e7e7;
 	border-radius: 5px;
 	cursor: pointer;
