@@ -9,7 +9,7 @@ FUNCIONALIDADES
 A API permite o usuário se cadastrar, cadastrar tarefas, editar atarefas, definir um tempo para sua conclusão e esse tempo será enviado para o **timer** do **Pomodoro**.
 
 Técnologias utilizadas: HTML, CSS, JAVASCRIPT E JAVA 11.
-Também utilizamos Spring Boot com Maeven Project, versão 2.7.5
+Também utilizamos Spring Boot com Maeven Project, versão 2.7.5. Utilizamos Lombok, Spring WEB JPA, H2 Database, Spring Security, Validation, Postgres.
 
 **Método de utilização:**
 **Sem Login:**
