@@ -184,6 +184,7 @@ tbody tr td {
   padding: 6px;
   max-width: 50px;
   align-content: center;
+  word-wrap: normal;
 }
 
 thead tr th {

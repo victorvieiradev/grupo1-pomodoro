@@ -224,7 +224,7 @@ function insertItem(item, index) {
   const startItemButton = document.createElement('button');
   const bxStart = document.createElement('i');
   bxStart.className = 'fa-solid fa-play' ;
-  bxStart.onclick = () => startTimer(item.minutos)
+  bxStart.onclick = () => startTimer(item.minutos, item.titulo)
   // localStorage.push(item.id, item.minutos)
   startItemButton.appendChild(bxStart)
   acaoStart.appendChild(startItemButton)
@@ -270,8 +270,9 @@ loadItens()
 getItensBD()
 
 
-function startTimer(minutos){
+function startTimer(minutos, titulo){
   localStorage.setItem('tempo', JSON.stringify(minutos))
+  localStorage.setItem('TituloTarefa', JSON.stringify(titulo))
   window.location.href = "timerU/timer.html";
   
  }
