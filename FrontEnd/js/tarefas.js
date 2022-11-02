@@ -214,23 +214,11 @@ function insertItemConcluido(item, index) {
   const descricaoTD = document.createElement('td');
   descricaoTD.innerText = item.descricao
 
-  // BOTAO DELETAR TAREFA
-  const acaoDelete = document.createElement('td');
-  const deleteItemButton = document.createElement('button');
-  deleteItemButton.setAttribute('id', 'deletar')
-  deleteItemButton.onclick = () => deleteItem(item.id);
-  const bxDelete = document.createElement('i');
-  bxDelete.className = 'fa-solid fa-trash';
-  deleteItemButton.appendChild(bxDelete)
-  acaoDelete.appendChild(deleteItemButton)
 
 
   trc.appendChild(tituloTD)
   trc.appendChild(descricaoTD)
-  
 
-
-  trc.appendChild(acaoDelete)
 
 
   tbody.appendChild(trc)
