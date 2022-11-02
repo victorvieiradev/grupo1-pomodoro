@@ -78,7 +78,7 @@ public class TarefaController extends ExceptionHandlerTarefas {
         tarefa.setId(tarefaModelOptional.get().getId());
         tarefa.setConcluido(true);
         tarefaService.salvarTarefa(tarefa);
-        return ResponseEntity.status(HttpStatus.OK).body("A tarefa " + tarefa.getTitulo() + " foi concluída.");
+        return ResponseEntity.status(HttpStatus.OK).body(tarefa);
     }
 
 

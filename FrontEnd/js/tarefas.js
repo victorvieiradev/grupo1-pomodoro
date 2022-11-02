@@ -2,12 +2,13 @@
 
 const modal = document.querySelector('.modal-container')
 const tbody = document.querySelector('tbody')
+const tbodyC = document.querySelector('#tarefasConcluidas')
 const sNome = document.querySelector('#titulo')
 const sFuncao = document.querySelector('#descricao')
 const sSalario = document.querySelector('#minutos')
 const btnSalvar = document.querySelector('#btnSalvar')
 
-
+var itensConc 
 var itens
 var id 
 
@@ -153,17 +154,30 @@ async function marcarConcluidoItem(id, index)  {
 
 
   try{
-    const response = await fetch(`http://localhost:8080/tarefas/concluir/${id}`, {
+    //const response =
+     await fetch(`http://localhost:8080/tarefas/concluir/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
        
       },
-      body:{},
-    })
+
+    }).then( (response) => {
+      return response.json()
+    }).then(data => {
+
+      itensConc.push(data)
+
+}
+) 
+
+
     itens.splice(index, 1)
+    setItensConc()
     setItensBD()
     loadItens()
+    
+    
 
   } catch{
     
@@ -172,6 +186,7 @@ async function marcarConcluidoItem(id, index)  {
 }
 
 function loadItens() {
+  itensConc = getItensConc()
   itens = getItensBD()
   tbody.innerHTML = ''
   itens.forEach((item, index) => {
@@ -179,6 +194,48 @@ function loadItens() {
   })
 
 }
+
+function loadItensConcluidos() {
+  itensConc = getItensConc()
+  itens = getItensBD()
+  tbodyC.innerHTML = ''
+  itensConc.forEach((item, index) => {
+    insertItemConcluido(item, index)
+  })
+
+}
+
+function insertItemConcluido(item, index) {
+  let trc = document.createElement('tr')
+
+  // ADICIONAR ITEM
+  const tituloTD = document.createElement('td');
+  tituloTD.innerText = item.titulo
+  const descricaoTD = document.createElement('td');
+  descricaoTD.innerText = item.descricao
+
+  // BOTAO DELETAR TAREFA
+  const acaoDelete = document.createElement('td');
+  const deleteItemButton = document.createElement('button');
+  deleteItemButton.setAttribute('id', 'deletar')
+  deleteItemButton.onclick = () => deleteItem(item.id);
+  const bxDelete = document.createElement('i');
+  bxDelete.className = 'fa-solid fa-trash';
+  deleteItemButton.appendChild(bxDelete)
+  acaoDelete.appendChild(deleteItemButton)
+
+
+  trc.appendChild(tituloTD)
+  trc.appendChild(descricaoTD)
+  
+
+
+  trc.appendChild(acaoDelete)
+
+
+  tbody.appendChild(trc)
+}
+
 
 function insertItem(item, index) {
   let tr = document.createElement('tr')
@@ -203,7 +260,7 @@ function insertItem(item, index) {
   // BOTAO CONCLUIR TAREFA
   const acaoConclui = document.createElement('td');
   const concluiItemButton = document.createElement('button');
-  concluiItemButton.onclick = () => marcarConcluidoItem(item.id);
+  concluiItemButton.onclick = () => marcarConcluidoItem(item.id, item);
   const bxConclui = document.createElement('i');
   bxConclui.className = 'fa-regular fa-circle-check';
   concluiItemButton.appendChild(bxConclui)
@@ -240,6 +297,9 @@ function insertItem(item, index) {
   tbody.appendChild(tr)
 }
 
+
+
+
 async function getItensDB(){
 
  let payload = localStorage.getItem("userCpf")
@@ -262,12 +322,15 @@ async function getItensDB(){
 
 //FAZER FUNÇÃO GET COM DATABASE PARA MOSTRAR NA TELA
 
+const getItensConc = () => JSON.parse( localStorage.getItem('concluidas')) ?? []
 const getItensBD = () => JSON.parse(localStorage.getItem('dbfunc')) ?? []
 const setItensBD = () => localStorage.setItem('dbfunc', JSON.stringify(itens))
-
-getItensDB()
+const setItensConc = () => localStorage.setItem('concluidas', JSON.stringify(itensConc))
+// getItensDB()
 loadItens()
 getItensBD()
+getItensConc()
+loadItensConcluidos()
 
 
 function startTimer(minutos, titulo){

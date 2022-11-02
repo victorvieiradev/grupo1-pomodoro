@@ -4,11 +4,6 @@ nav#menu {
 	height:70px;
 	}
   
-   .imagem {
-	  background-image: url(.../Logotipo.png); /* Insere a imagem */
-	  width: 150px;/* Faz a largura ficar igual a da largura da imagem de exemplo */
-	  height: 150px;/* Faz a altura ficar igual a da altura da imagem de exemplo */
-	  }
   nav#menu ul{
 	list-style: none;
 	position: relative;
@@ -37,28 +32,25 @@ nav#menu {
   border-radius: 50px;
   height: 65px;
   width: 120px;
-  align-content: centers;
+  align-content: center;
   
   
   }
   
-  nav#menu li:hover {
-	background: linear-gradient(30deg, #2c2630 0%, #593c9c 100%);
-  }
+  
   
   nav#menu li a {
 	color: #beb8b8;
 	text-decoration: dashed;
 	font-size: 25px;
 	border-bottom-style: solid;
-  
+	  padding: 0;
   }
   
   
   nav#menu li a:hover {
   
-	color: #f3f3f3;
-	text-decoration: dashed,  #593c9c;
+	color:  #593c9c;
 	font-size: 25px;
 	border-bottom-style: solid;
   

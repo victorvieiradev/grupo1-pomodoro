@@ -14,9 +14,6 @@ import java.util.Optional;
 @Service
 public class UsuarioService  {
 
-//    private BCryptPasswordEncoder passwordEncoder(){
-//        return new BCryptPasswordEncoder();
-//    }
 
     @Autowired
     private UsuarioRepository usuarioRepository;
@@ -25,7 +22,7 @@ public class UsuarioService  {
         if (usuarioRepository.findById(usuarioModel.getCpf()).isPresent()){
             throw new DuplicateKeyException(usuarioModel.getCpf());
         }else
-      //  usuarioModel.setSenha(passwordEncoder().encode(usuarioModel.getSenha()));
+
         return  usuarioRepository.save(usuarioModel);
     }
 

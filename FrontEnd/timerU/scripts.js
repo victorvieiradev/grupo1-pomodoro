@@ -121,7 +121,7 @@ function drawTime() {
 }
 
 function drawTurn() {
-	let timeMode = localStorage.getItem("TituloTarefa");
+	let timeMode = localStorage.getItem('TituloTarefa');
 	if (isBreakTime) {
 		timeMode = currentTurn < totalTurns ? 'Descanso' : 'Descanso Longo';
 	}
