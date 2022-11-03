@@ -22,8 +22,7 @@ body {
 
     
   max-width: 100%;
-
-    
+  max-height: 100%;
 
 	background: #121214;
 	background: -moz-linear-gradient(60deg, #121214 0%, #6c49be 100%);
@@ -33,6 +32,7 @@ body {
     
     
 } 
+
 
 
 h3 div{
@@ -56,10 +56,21 @@ border-radius: 500px;
 }
 
 /* .......................................................NAVBAR..................................................................................... */
-nav#menu {
+header {
   display: block;
   background-color: #000000;
   height:70px;
+}
+img{
+  height: 75px;
+  width: 80px;
+  margin-left: -400px;
+  
+}
+
+nav#menu ul div{
+  height: 3px;
+  width: 539px;
   }
 
 nav#menu ul{
@@ -68,6 +79,7 @@ nav#menu ul{
   width: auto;
   text-align: center;
   text-decoration: none;
+  height: 80px;
   
   
 }
@@ -81,15 +93,16 @@ div div button#new :hover {
 }
 
 
+
 nav#menu li{
 display: inline-block;
-color: 3023ae;
+
 background: transparent;
 padding: 10px;
 margin: 4px;
 border-radius: 50px;
-height: 65px;
-width: 120px;
+height: auto;
+width: auto;
 align-content: center;
 
 
@@ -422,7 +435,7 @@ div#textosHome2  article{
 } 
 
 div#txt {
-  
+  list-style: none;
   margin-top: 20px;
   column-count: 2;
   column-gap: initial;
@@ -431,4 +444,21 @@ div#txt {
   
 }
 /* __________________________________________________________________________________________________________________________ */
+section#login{
+  margin-top: -30px;
+}
 
+section#login div#login{
+  
+  background : linear-gradient(30deg, #2c2630 0%, #4a3381 100%);;
+  border-radius: 12px;
+  color:#beb8b8
+}
+
+section#login button{
+  margin-top: -30px;
+}
+
+section#login p#semConta{
+  margin-top: -50px;
+}
