@@ -56,6 +56,17 @@ nav#menu {
   
   }
 
+  img{
+	height: 75px;
+	width: 80px;
+	margin-left: -400px;
+	
+  }
+  
+  nav#menu ul div{
+	height: 3px;
+	width: 539px;
+	}
 
 
 :root {
