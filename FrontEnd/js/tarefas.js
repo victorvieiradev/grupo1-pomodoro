@@ -176,6 +176,7 @@ async function marcarConcluidoItem(id, index)  {
     setItensConc()
     setItensBD()
     loadItens()
+    loadItensConcluidos()
     
     
 
@@ -287,7 +288,7 @@ function insertItem(item, index) {
 
 
 
-
+//FAZER FUNÇÃO GET COM DATABASE PARA MOSTRAR NA TELA
 async function getItensDB(){
 
  let payload = localStorage.getItem("userCpf")
@@ -301,20 +302,41 @@ async function getItensDB(){
     });
    
     const data = await response.json();
-    const data2 = data.filter((item) => item.usuario.cpf === payload); 
-    console.log(data2)
-    localStorage.setItem('dbfunc', JSON.stringify(data))
-
+    const data2 = data.filter((item) => ((item?.usuario?.cpf === payload)&&(item?.concluido === false))); 
+    const dataC = data.filter((item) => ((item?.usuario?.cpf === payload)&&(item?.concluido === false))); 
+    localStorage.setItem('dbfunc', JSON.stringify(data2))
+    
 
 }
 
-//FAZER FUNÇÃO GET COM DATABASE PARA MOSTRAR NA TELA
+async function getItensConcluidosDB(){
+
+  let payload = true
+ 
+   const response = await fetch(`http://localhost:8080/tarefas`, {
+       method: 'GET',
+       headers: {
+         'Content-Type': 'application/json',
+         
+       }
+     });
+    
+     const data = await response.json();
+     const data2 = data.filter((item) => item?.concluido === payload); 
+ 
+     localStorage.setItem('concluidas', JSON.stringify(data2))
+     
+ 
+ }
+ 
 
 const getItensConc = () => JSON.parse( localStorage.getItem('concluidas')) ?? []
 const getItensBD = () => JSON.parse(localStorage.getItem('dbfunc')) ?? []
 const setItensBD = () => localStorage.setItem('dbfunc', JSON.stringify(itens))
 const setItensConc = () => localStorage.setItem('concluidas', JSON.stringify(itensConc))
-// getItensDB()
+
+getItensDB()
+getItensConcluidosDB()
 loadItens()
 getItensBD()
 getItensConc()
